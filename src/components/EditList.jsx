@@ -1,9 +1,21 @@
 import React, { Component } from 'react'
+import {withRouter } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import {connect} from 'react-redux'
+const API = "http://localhost:3001/lists"
 
 class EditList extends Component {
   state = {
-    title: "",
-    people: ""
+    title: this.props.lists[0].title,
+    people: this.props.lists[0].people
+  }
+
+  componentDidMount() {
+    fetch(API)
+    .then(r => r.json())
+    .then((listsArray) => {
+      this.props.setLists(listsArray)
+    })
   }
 
   handleChange = (event) => {
@@ -14,16 +26,13 @@ class EditList extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    let { title, people } = this.state
     
-    fetch(`${this.props.API}`, {
-      method: "POST",
+    fetch(`${API}/1`, {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({
-        title, people
-      })
+      body: JSON.stringify(this.state)
     })
     .then(r => r.json())
     .then(console.log)
@@ -45,11 +54,30 @@ class EditList extends Component {
 
           <br />
 
-          <input type="submit" value="Create list" />
+          <input type="submit" value="Save changes" />
         </form>
       </div>
     )
   }
 }
 
-export default EditList
+let setLists = (response) => {
+  return {
+    type: "SET_ALL_LISTS",
+    payload: response
+  }
+}
+
+let mapDispatchToProps = {
+  setLists: setLists,
+}
+
+let mapStateToProps = (globalState) => {
+  return {
+    lists: globalState.listInfo.lists
+  }
+}
+
+let MagicalComponent = withRouter(EditList)
+
+export default connect(mapStateToProps, mapDispatchToProps)(MagicalComponent)

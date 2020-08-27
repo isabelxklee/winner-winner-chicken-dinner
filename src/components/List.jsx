@@ -5,10 +5,6 @@ import {connect} from 'react-redux'
 const API = "http://localhost:3001/lists"
 
 class List extends Component {
-  state = {
-    lists: []
-  }
-
   componentDidMount() {
     fetch(API)
     .then(r => r.json())
