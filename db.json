@@ -6,14 +6,9 @@
       "people": "isabel klee, ryan nylander, frankie"
     },
     {
-      "id": 2,
-      "title": "the code benders",
-      "people": "isabel klee, ryan nylander, frankie"
-    },
-    {
       "title": "testing",
-      "people": "testing 1",
-      "id": 3
+      "people": "testing 1\ntesting 2\ntesting 3",
+      "id": 2
     }
   ]
 }
