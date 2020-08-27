@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import Home from './components/Home'
 import List from './components/List'
 import EditList from './components/EditList'
+import Generator from './components/Generator'
 import {BrowserRouter, Route} from 'react-router-dom'
 import {createStore, combineReducers} from 'redux'
 import {Provider} from 'react-redux'
@@ -41,6 +42,7 @@ ReactDOM.render(
         <Route exact path="/"><Home localURL={API} /></Route>
         <Route exact path="/list"><List localURL={API} /></Route>
         <Route exact path="/edit-list"><EditList localURL={API} /></Route>
+        <Route exact path="/spin-the-wheel"><Generator localURL={API} /></Route>
       </div>
     </BrowserRouter>
   </Provider>,

@@ -48,7 +48,7 @@ class List extends Component {
           { this.findPeople() }
         </ul>
         <Link to="/edit-list" exact="true"><button>Edit list</button></Link>
-        <button>Spin the wheel</button>
+        <Link to="/spin-the-wheel" exact="true"><button>Spin the wheel</button></Link>
       </div>
     )
   }
