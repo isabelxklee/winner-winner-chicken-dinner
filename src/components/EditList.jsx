@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {withRouter } from 'react-router-dom'
-// import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
 const API = "http://localhost:3001/lists"
 
@@ -35,7 +34,7 @@ class EditList extends Component {
       body: JSON.stringify(this.state)
     })
     .then(r => r.json())
-    .then(console.log)
+    .then(this.props.history.push("/list"))
   }
 
   render() {

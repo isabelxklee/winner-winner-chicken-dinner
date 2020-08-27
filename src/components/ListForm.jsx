@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {withRouter } from 'react-router-dom'
+import {connect} from 'react-redux'
 
 class ListForm extends Component {
   state = {
@@ -26,7 +28,7 @@ class ListForm extends Component {
       })
     })
     .then(r => r.json())
-    .then(console.log)
+    .then(this.props.history.push("/list"))
   }
 
   render() {
@@ -52,4 +54,6 @@ class ListForm extends Component {
   }
 }
 
-export default ListForm
+let MagicalComponent = withRouter(ListForm)
+
+export default connect()(MagicalComponent)
