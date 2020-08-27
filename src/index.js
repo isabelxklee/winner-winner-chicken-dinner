@@ -8,6 +8,8 @@ import {createStore, combineReducers} from 'redux'
 import {Provider} from 'react-redux'
 import './index.css'
 
+const API = "http://localhost:3001/lists"
+
 let initialState = {
   lists: []
 }
@@ -36,9 +38,9 @@ ReactDOM.render(
   <Provider store={store}>    
     <BrowserRouter>
       <div>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/list" component={List} />
-        <Route exact path="/edit-list" component={EditList} />
+        <Route exact path="/"><Home localURL={API} /></Route>
+        <Route exact path="/list"><List localURL={API} /></Route>
+        <Route exact path="/edit-list"><EditList localURL={API} /></Route>
       </div>
     </BrowserRouter>
   </Provider>,

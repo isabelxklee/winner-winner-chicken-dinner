@@ -18,7 +18,7 @@ class ListForm extends Component {
     event.preventDefault()
     let { title, people } = this.state
     
-    fetch(`${this.props.API}`, {
+    fetch(`${this.props.localURL}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {withRouter } from 'react-router-dom'
 import {connect} from 'react-redux'
-const API = "http://localhost:3001/lists"
 
 class EditList extends Component {
   state = {
@@ -10,7 +9,7 @@ class EditList extends Component {
   }
 
   componentDidMount() {
-    fetch(API)
+    fetch(this.props.localURL)
     .then(r => r.json())
     .then((listsArray) => {
       this.props.setLists(listsArray)
@@ -26,7 +25,7 @@ class EditList extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     
-    fetch(`${API}/${this.props.lists[this.props.lists.length-1].id}`, {
+    fetch(`${this.props.localURL}/${this.props.lists[this.props.lists.length-1].id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"

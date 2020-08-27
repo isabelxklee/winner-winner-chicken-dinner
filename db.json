@@ -7,13 +7,8 @@
     },
     {
       "title": "testing",
-      "people": "testing 1\ntesting 2\ntesting 3",
+      "people": "pal 1\npal 2\npal 3",
       "id": 2
-    },
-    {
-      "title": "pals",
-      "people": "pal 1\npal 2\npal 3\npal 4",
-      "id": 3
     }
   ]
 }

@@ -2,11 +2,10 @@ import React, { Component } from 'react'
 import {withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
-const API = "http://localhost:3001/lists"
 
 class List extends Component {
   componentDidMount() {
-    fetch(API)
+    fetch(this.props.localURL)
     .then(r => r.json())
     .then((listsArray) => {
       this.props.setLists(listsArray)
