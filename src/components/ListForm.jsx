@@ -10,12 +10,12 @@ class ListForm extends Component {
     this.setState({
       [event.target.name]: event.target.value
     })
-
-    console.log(this.state)
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
+
+    console.log(this.state)
 
     fetch('http://localhost:3000/lists', {
       method: 'POST',
