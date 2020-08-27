@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import ListForm from './ListForm'
 import SingleList from './SingleList'
 
+const API = "http://localhost:3001/lists"
+
 class Home extends Component {
   state = {
     lists: []
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/lists")
+    fetch(API)
     .then(r => r.json())
     .then((array) => {
       this.setState({
@@ -27,7 +29,7 @@ class Home extends Component {
     return (
       <div>
         <h1>Winner winner, chicken dinner!</h1>
-        <ListForm />
+        <ListForm API={API} />
         { listArray }
       </div>
     )

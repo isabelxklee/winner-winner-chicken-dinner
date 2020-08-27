@@ -14,22 +14,19 @@ class ListForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-
-    console.log(this.state)
-
-    fetch('http://localhost:3000/lists', {
-      method: 'POST',
+    let { title, people } = this.state
+    
+    fetch(`${this.props.API}`, {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        title: this.state.title,
-        people: this.state.people
+        title, people
       })
     })
-      .then(r => r.json())
-      .then(console.log)
+    .then(r => r.json())
+    .then(console.log)
   }
 
   render() {
