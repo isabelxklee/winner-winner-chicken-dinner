@@ -18,35 +18,35 @@ class Generator extends Component {
 
   findPeople = () => {
     let firstList = this.props.lists[this.props.lists.length-1]
+    let peopleArray = []
 
     if(typeof firstList != "undefined") {
-      console.log("people valid!!!")
-
-      let peopleArray = this.remove_linebreaks(firstList.people)
-      console.log(peopleArray)
-
-      return peopleArray
-   }
-  }
-
-  randomSort = (array) => {
-    array = this.findPeople()
-
-    if(typeof array != "undefined") {
-      for (var i = array.length - 1; i > 0; i--) {
+      peopleArray = this.remove_linebreaks(firstList.people)
+      for (var i = peopleArray.length - 1; i > 0; i--) {
         var rand = Math.floor(Math.random() * (i + 1));
-        [array[i], array[rand]] = [array[rand], array[i]]
-      } 
+        [peopleArray[i], peopleArray[rand]] = [peopleArray[rand], peopleArray[i]]
+      }
     }
 
-    return array
+    return peopleArray
+  }
+
+  nextSpin = () => {
+  
+    
   }
 
   render() {
+    console.log(this.findPeople())
+
 
     return (
       <div>
-        {this.randomSort()}
+        <h3>Who's the lucky duck?</h3>
+        <h1>placeholder name</h1>
+
+        <p>There are 0 people left.</p>
+        <button onClick={this.nextSpin}>Next spin</button>
       </div>
     )
   }
