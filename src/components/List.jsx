@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import {withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import {connect} from 'react-redux'
 const API = "http://localhost:3001/lists"
 
 class List extends Component {
@@ -9,20 +12,18 @@ class List extends Component {
   componentDidMount() {
     fetch(API)
     .then(r => r.json())
-    .then((array) => {
-      this.setState({
-        lists: array
-      })
+    .then((listsArray) => {
+      this.props.setLists(listsArray)
     })
   }
 
   findTitle = () => {
-    let firstList = this.state.lists[1]
+    let firstList = this.props.lists[0]
 
     if(typeof firstList != "undefined") {
       console.log("title valid!!!")
       return firstList.title
-   }
+    }
   }
 
   remove_linebreaks = (string) => { 
@@ -30,11 +31,10 @@ class List extends Component {
   }
 
   findPeople = () => {
-    let firstList = this.state.lists[1]
+    let firstList = this.props.lists[0]
 
     if(typeof firstList != "undefined") {
       console.log("people valid!!!")
-      console.log(firstList.people)
 
       let peopleArray = this.remove_linebreaks(firstList.people)
       console.log(peopleArray)
@@ -46,18 +46,36 @@ class List extends Component {
   }
 
   render() {
-
     return (
       <div>
         <h1>{ this.findTitle() }</h1>
         <ul>
           { this.findPeople() }
         </ul>
-        <button>Edit list</button>
+        <Link to="/edit-list" exact="true"><button>Edit list</button></Link>
         <button>Spin the wheel</button>
       </div>
     )
   }
 }
 
-export default List
+let setLists = (response) => {
+  return {
+    type: "SET_ALL_LISTS",
+    payload: response
+  }
+}
+
+let mapDispatchToProps = {
+  setLists: setLists,
+}
+
+let mapStateToProps = (globalState) => {
+  return {
+    lists: globalState.listInfo.lists
+  }
+}
+
+let MagicalComponent = withRouter(List)
+
+export default connect(mapStateToProps, mapDispatchToProps)(MagicalComponent)
