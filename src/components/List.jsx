@@ -17,12 +17,16 @@ class List extends Component {
   }
 
   findTitle = () => {
-    let firstList = this.state.lists[0]
+    let firstList = this.state.lists[1]
 
     if(typeof firstList != "undefined") {
       console.log("title valid!!!")
       return firstList.title
    }
+  }
+
+  remove_linebreaks = (string) => { 
+    return string.replace( /[\r\n]+/gm, ", " ).split(", ")
   }
 
   findPeople = () => {
@@ -39,10 +43,6 @@ class List extends Component {
         return <li key={person}>{person}</li>
       })
    }
-  }
-
-  remove_linebreaks = (string) => { 
-    return string.replace( /[\r\n]+/gm, ", " ).split(", ")
   }
 
   render() {
