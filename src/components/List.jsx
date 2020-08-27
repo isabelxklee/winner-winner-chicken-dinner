@@ -14,7 +14,7 @@ class List extends Component {
   }
 
   findTitle = () => {
-    let firstList = this.props.lists[0]
+    let firstList = this.props.lists[this.props.lists.length-1]
 
     if(typeof firstList != "undefined") {
       console.log("title valid!!!")
@@ -27,7 +27,7 @@ class List extends Component {
   }
 
   findPeople = () => {
-    let firstList = this.props.lists[0]
+    let firstList = this.props.lists[this.props.lists.length-1]
 
     if(typeof firstList != "undefined") {
       console.log("people valid!!!")

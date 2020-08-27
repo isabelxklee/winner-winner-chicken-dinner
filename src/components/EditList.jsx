@@ -6,8 +6,8 @@ const API = "http://localhost:3001/lists"
 
 class EditList extends Component {
   state = {
-    title: this.props.lists[0].title,
-    people: this.props.lists[0].people
+    title: this.props.lists[this.props.lists.length-1].title,
+    people: this.props.lists[this.props.lists.length-1].people
   }
 
   componentDidMount() {
@@ -27,7 +27,7 @@ class EditList extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     
-    fetch(`${API}/1`, {
+    fetch(`${API}/${this.props.lists[this.props.lists.length-1].id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
