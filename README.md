@@ -9,8 +9,7 @@ Winner winner, chicken dinner! 🐓
 <a name="features"/>
 
 ## Features
-* Fully mobile responsive
-* Navigate between Home, About, Work, Creative, and Tech Writing pages
+* 
 
 <a name="getting-started"/>
 
@@ -18,9 +17,9 @@ Winner winner, chicken dinner! 🐓
 1. Install [Node.js](https://www.npmjs.com/get-npm).
 
     ```$ brew install node```
-2. Install the [Gatsby CLI](https://www.gatsbyjs.com/docs/gatsby-cli/).
+2. Install...
 
-    ```$npm install -g gatsby-cli```
+    ```$npm install ...```
     
 3. Clone this repo and cd into the directory.
 4. Install all dependencies.
@@ -29,9 +28,9 @@ Winner winner, chicken dinner! 🐓
 
 5. Start the development mode.
 
-    ```$ gatsby develop```
+    ```$npm start```
     
-6. Open your browser and navigate to `http://localhost:8000/`.
+6. Open your browser and navigate to `http://localhost:3001/`.
 
 <a name="tech-stack"/>
 
