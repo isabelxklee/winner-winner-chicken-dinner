@@ -12,14 +12,23 @@ class List extends Component {
     })
   }
 
+  remove_linebreaks = (string) => { 
+    return string.replace( /[\r\n]+/gm, ", " ).split(", ")
+  }
+
+  formatLocalStorage = () => {
+    let peopleArray = this.remove_linebreaks(localStorage.people)
+    return peopleArray
+  }
+
   render() {
-    let peopleArray = this.props.people.map((person) => {
+    let peopleArray = this.formatLocalStorage().map((person) => {
       return <li key={person}> {person} </li>
     })
 
     return (
       <div>
-        <h1>{ this.props.title }</h1>
+        <h1>{ localStorage.title }</h1>
         <ul>
           { peopleArray }
         </ul>

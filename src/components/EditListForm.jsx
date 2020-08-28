@@ -4,8 +4,8 @@ import {connect} from 'react-redux'
 
 class EditListForm extends Component {
   state = {
-    title: this.props.title,
-    people: this.props.people.join(", ")
+    title: localStorage.title,
+    people: localStorage.people
   }
 
   componentDidMount() {
@@ -29,7 +29,7 @@ class EditListForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     
-    fetch(`${this.props.localURL}/${this.props.id}`, {
+    fetch(`${this.props.localURL}/${localStorage.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
