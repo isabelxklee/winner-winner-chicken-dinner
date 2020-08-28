@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {withRouter } from 'react-router-dom'
 import {connect} from 'react-redux'
 
-class EditList extends Component {
+class EditListForm extends Component {
   state = {
     title: this.props.title,
     people: this.props.people.join(", ")
@@ -101,6 +101,6 @@ let mapStateToProps = (globalState) => {
   }
 }
 
-let MagicalComponent = withRouter(EditList)
+let MagicalComponent = withRouter(EditListForm)
 
 export default connect(mapStateToProps, mapDispatchToProps)(MagicalComponent)

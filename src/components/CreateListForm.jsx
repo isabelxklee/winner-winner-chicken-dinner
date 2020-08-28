@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {withRouter } from 'react-router-dom'
 import {connect} from 'react-redux'
 
-class ListForm extends Component {
+class CreateListForm extends Component {
   state = {
     title: "",
     people: []
@@ -103,6 +103,6 @@ let mapDispatchToProps = {
   createList: createList
 }
 
-let MagicalComponent = withRouter(ListForm)
+let MagicalComponent = withRouter(CreateListForm)
 
 export default connect(null, mapDispatchToProps)(MagicalComponent)

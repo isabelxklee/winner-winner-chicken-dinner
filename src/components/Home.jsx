@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ListForm from './ListForm'
+import CreateListForm from './CreateListForm'
 
 class Home extends Component {
   render() {
@@ -7,7 +7,7 @@ class Home extends Component {
     return (
       <div>
         <h1>Winner winner, chicken dinner!</h1>
-        <ListForm localURL={this.props.localURL} />
+        <CreateListForm localURL={this.props.localURL} />
       </div>
     )
   }
