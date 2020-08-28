@@ -38,4 +38,5 @@ Winner winner, chicken dinner! 🐓
 * Redux
 * HTML/CSS
 * [styled-components](https://styled-components.com)
-* [Netlify](https://www.netlify.com)
+* [Chance](https://chancejs.com/index.html): random object generator for JavaScript
+* [Netlify](https://www.netlify.com): front-end hosting service 
