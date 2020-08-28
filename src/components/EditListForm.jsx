@@ -16,7 +16,7 @@ class EditListForm extends Component {
     })
   }
 
-  remove_linebreaks = (string) => { 
+  formatStringToArr = (string) => { 
     return string.replace( /[\r\n]+/gm, ", " ).split(", ")
   }
 
@@ -36,7 +36,7 @@ class EditListForm extends Component {
       },
       body: JSON.stringify({
         title: this.state.title,
-        people: this.remove_linebreaks(this.state.people)
+        people: this.formatStringToArr(this.state.people)
       })
     })
     .then(r => r.json())
@@ -47,6 +47,8 @@ class EditListForm extends Component {
 
   handleResponse = (response) => {
     this.props.setListDetails(response)
+    localStorage.setItem("title", response.title)
+    localStorage.setItem("people", response.people.join(", "))
     this.props.history.push("/list")
   }
 

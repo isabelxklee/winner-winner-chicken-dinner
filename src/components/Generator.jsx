@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import {withRouter } from 'react-router-dom'
 import {connect} from 'react-redux'
+const chance = require('chance').Chance()
 
 class Generator extends Component {
   state = {
-    luckyIndex: null
+    luckyIndex: 0
   }
 
   componentDidMount() {
@@ -15,12 +16,37 @@ class Generator extends Component {
     })
   }
 
-  handleChange = () => {
+  formatStringToArr = (string) => { 
+    return string.replace( /[\r\n]+/gm, ", " ).split(", ")
+  }
 
+  formatLocalStorage = () => {
+    let peopleArray = this.formatStringToArr(localStorage.people)
+    peopleArray = chance.shuffle(peopleArray)
+    localStorage.setItem("people", peopleArray.join(", "))
+    return peopleArray
+
+    // localStorage.people returns a string
+    // turn that string into an array
+    // shuffle the array
+    // then save it again as a string to localStorage
+  }
+
+  handleChange = () => {
+    let arr = this.formatLocalStorage()
+    let i = 0
+
+    while (i < arr.length) {
+      this.setState({
+        luckyIndex: this.state.luckyIndex ++
+      })
+      i++
+    }
   }
 
   render() {
-    console.log(this.props.lists)
+    console.log(this.formatLocalStorage())
+    console.log(this.state.luckyIndex)
 
     return (
       <div>

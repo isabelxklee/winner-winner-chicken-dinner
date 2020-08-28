@@ -12,12 +12,12 @@ class List extends Component {
     })
   }
 
-  remove_linebreaks = (string) => { 
+  formatStringToArr = (string) => { 
     return string.replace( /[\r\n]+/gm, ", " ).split(", ")
   }
 
   formatLocalStorage = () => {
-    let peopleArray = this.remove_linebreaks(localStorage.people)
+    let peopleArray = this.formatStringToArr(localStorage.people)
     return peopleArray
   }
 

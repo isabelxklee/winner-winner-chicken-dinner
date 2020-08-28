@@ -10,84 +10,19 @@
       ]
     },
     {
-      "title": "cats",
-      "people": [
-        "frankie",
-        "ryan",
-        "isabel"
-      ],
-      "id": 2
-    },
-    {
-      "title": "test",
-      "people": [
-        "aldsjs",
-        "lkdfj klsdjfs",
-        "12324t435",
-        "mvcnsdjfsdlkf"
-      ],
-      "id": 3
-    },
-    {
       "title": "fruits",
       "people": [
         "orange",
         "banana",
-        "something",
-        "grape",
-        "fruit"
+        "grapefruit",
+        "bloobs",
+        "purple",
+        "yummy",
+        "coconut",
+        "strawbs",
+        "dragonfruit"
       ],
-      "id": 4
-    },
-    {
-      "title": "fruits",
-      "people": [
-        "something",
-        "else",
-        "should",
-        "happen",
-        "here"
-      ],
-      "id": 5
-    },
-    {
-      "title": "testing",
-      "people": [
-        "dkfjskdlf",
-        "cxmvn",
-        "qweo",
-        "lksjfalsf"
-      ],
-      "id": 6
-    },
-    {
-      "title": "testing",
-      "people": [
-        "sdfkjs",
-        "weiru",
-        "vcxm",
-        "alsd"
-      ],
-      "id": 7
-    },
-    {
-      "title": "testing",
-      "people": [
-        "orange",
-        "bannaa",
-        "lallala",
-        "wieurweiru"
-      ],
-      "id": 8
-    },
-    {
-      "title": "test",
-      "people": [
-        "sldkfj",
-        "ksdjfiwe",
-        "vcxm,n"
-      ],
-      "id": 9
+      "id": 2
     }
   ]
 }
