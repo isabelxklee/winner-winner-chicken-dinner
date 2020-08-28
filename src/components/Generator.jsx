@@ -38,7 +38,7 @@ class Generator extends Component {
 
     while (i < arr.length) {
       this.setState({
-        luckyIndex: this.state.luckyIndex ++
+        luckyIndex: this.state.luckyIndex += i
       })
       i++
     }
