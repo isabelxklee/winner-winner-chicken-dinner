@@ -4,8 +4,8 @@ import {connect} from 'react-redux'
 
 class EditList extends Component {
   state = {
-    title: this.props.lists[this.props.lists.length-1].title,
-    people: this.props.lists[this.props.lists.length-1].people
+    title: this.props.title,
+    people: this.props.people
   }
 
   componentDidMount() {
@@ -25,7 +25,7 @@ class EditList extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     
-    fetch(`${this.props.localURL}/${this.props.lists[this.props.lists.length-1].id}`, {
+    fetch(`${this.props.localURL}/${this.props.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -33,7 +33,14 @@ class EditList extends Component {
       body: JSON.stringify(this.state)
     })
     .then(r => r.json())
-    .then(this.props.history.push("/list"))
+    .then((updatedList) => {
+      this.handleResponse(updatedList)
+    })
+  }
+
+  handleResponse = (response) => {
+    this.props.setListDetails(response)
+    this.props.history.push("/list")
   }
 
   render() {
@@ -66,13 +73,24 @@ let setLists = (response) => {
   }
 }
 
+let setListDetails = (response) => {
+  return {
+    type: "SET_LIST_DETAILS",
+    payload: response
+  }
+}
+
 let mapDispatchToProps = {
-  setLists: setLists,
+  setListDetails: setListDetails,
+  setLists: setLists
 }
 
 let mapStateToProps = (globalState) => {
   return {
-    lists: globalState.listInfo.lists
+    lists: globalState.listInfo.lists,
+    id: globalState.listInfo.id,
+    title: globalState.listInfo.title,
+    people: globalState.listInfo.people    
   }
 }
 
