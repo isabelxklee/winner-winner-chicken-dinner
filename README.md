@@ -9,7 +9,6 @@ Winner winner, chicken dinner! 🐓
 <a name="features"/>
 
 ## Features
-* 
 
 <a name="getting-started"/>
 
