@@ -28,7 +28,14 @@ class ListForm extends Component {
       })
     })
     .then(r => r.json())
-    .then(this.props.history.push("/list"))
+    .then((newList) => {
+      this.handleResponse(newList)
+    })
+  }
+
+  handleResponse = (response) => {
+    this.props.setListInfo(response)
+    this.props.history.push("/list")
   }
 
   render() {
@@ -37,13 +44,13 @@ class ListForm extends Component {
         <form onSubmit={this.handleSubmit}>
           <h3>List title</h3>
           <p>What’s the purpose of this list? Is it for a stand down meeting? Or are you and your friends trying to figure out who gets to pet the cute dog next?</p>
-          <input type="text" name="title" value={this.state.title} onChange={this.handleChange} />
+          <input type="text" name="title" value={this.state.title} onChange={this.handleChange} autoComplete="off" />
           
           <br />
 
           <h3>Enter a list of names</h3>
           <p>Please enter all the names on a separate line. Otherwise you will break this machine. And it will be very sad.</p>
-          <textarea name="people" value={this.state.people} onChange={this.handleChange} />
+          <textarea name="people" value={this.state.people} onChange={this.handleChange} autoComplete="off" />
 
           <br />
 
@@ -54,6 +61,17 @@ class ListForm extends Component {
   }
 }
 
+let setListInfo = (response) => {
+  return {
+    type: "SET_LIST_INFO",
+    payload: response
+  }
+}
+
+let mapDispatchToProps = {
+  setListInfo: setListInfo,
+}
+
 let MagicalComponent = withRouter(ListForm)
 
-export default connect()(MagicalComponent)
+export default connect(null, mapDispatchToProps)(MagicalComponent)

@@ -24,3 +24,8 @@ newFruits
 fruits
 => [ 'peach', 'pear', 'apple', 'plum' ]
 ```
+
+## How to structure the data
+- create a lists array in db.json
+- every time a user creates a list, destroy any existing lists
+- therefore, there should only ever be one list in db.json at any time

@@ -12,7 +12,10 @@ import './index.css'
 const API = "http://localhost:3001/lists"
 
 let initialState = {
-  lists: []
+  lists: [],
+  id: 0,
+  title: "",
+  people: ""
 }
 
 let listsReducer = (state = initialState, action) => {
@@ -21,6 +24,13 @@ let listsReducer = (state = initialState, action) => {
       return {
         ...state,
         lists: action.payload
+      }
+    case "SET_LIST_INFO":
+      return {
+        ...state,
+        id: action.payload.id,
+        title: action.payload.title,
+        people: action.payload.people,        
       }
     default:
       return state

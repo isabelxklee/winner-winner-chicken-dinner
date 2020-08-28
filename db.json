@@ -6,14 +6,9 @@
       "people": "isabel klee, ryan nylander, frankie"
     },
     {
-      "title": "testing",
-      "people": "pal 1\npal 2\npal 3\npal 4\npal 5\npal 6\npal 7\npal 8\npal 9\npal 10",
+      "title": "test",
+      "people": "test 1\ntest 2\ntest 3",
       "id": 2
-    },
-    {
-      "title": "test list",
-      "people": "list item 1\nlist item 2\nlist item 3\nlist item 4\nlist item 5",
-      "id": 3
     }
   ]
 }
