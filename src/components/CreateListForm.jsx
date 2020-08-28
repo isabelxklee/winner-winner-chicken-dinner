@@ -49,6 +49,8 @@ class CreateListForm extends Component {
     console.log(response)
     this.props.setListDetails(response)
     this.props.createList(response)
+    localStorage.setItem("people", response.people.join(", "))
+    console.log(localStorage)
     this.props.history.push("/list")
   }
 

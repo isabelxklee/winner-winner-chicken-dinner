@@ -15,10 +15,6 @@ class Generator extends Component {
     })
   }
 
-  remove_linebreaks = (string) => { 
-    return string.replace( /[\r\n]+/gm, ", " ).split(", ")
-  }
-
   handleChange = () => {
 
   }
