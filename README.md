@@ -39,3 +39,4 @@ Winner winner, chicken dinner! 🐓
 * HTML/CSS
 * [styled-components](https://styled-components.com)
 * [Netlify](https://www.netlify.com)
+* [Chance](https://chancejs.com/index.html)
