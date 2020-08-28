@@ -16,7 +16,6 @@ class List extends Component {
     let firstList = this.props.lists[this.props.lists.length-1]
 
     if(typeof firstList != "undefined") {
-      console.log("title valid!!!")
       return firstList.title
     }
   }
@@ -29,11 +28,7 @@ class List extends Component {
     let firstList = this.props.lists[this.props.lists.length-1]
 
     if(typeof firstList != "undefined") {
-      console.log("people valid!!!")
-
       let peopleArray = this.remove_linebreaks(firstList.people)
-      console.log(peopleArray)
-
       return peopleArray.map((person) => {
         return <li key={person}>{person}</li>
       })
@@ -41,6 +36,8 @@ class List extends Component {
   }
 
   render() {
+    console.log(this.props.title)
+
     return (
       <div>
         <h1>{ this.findTitle() }</h1>
@@ -61,13 +58,24 @@ let setLists = (response) => {
   }
 }
 
+let setListDetails = (response) => {
+  return {
+    type: "SET_LIST_DETAILS",
+    payload: response
+  }
+}
+
 let mapDispatchToProps = {
   setLists: setLists,
+  setListDetails: setListDetails
 }
 
 let mapStateToProps = (globalState) => {
   return {
-    lists: globalState.listInfo.lists
+    lists: globalState.listInfo.lists,
+    id: globalState.listInfo.id,
+    title: globalState.listInfo.title,
+    people: globalState.listInfo.people    
   }
 }
 

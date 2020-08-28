@@ -25,7 +25,7 @@ let listsReducer = (state = initialState, action) => {
         ...state,
         lists: action.payload
       }
-    case "SET_LIST_INFO":
+    case "SET_LIST_DETAILS":
       return {
         ...state,
         id: action.payload.id,

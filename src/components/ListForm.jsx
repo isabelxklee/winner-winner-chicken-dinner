@@ -34,7 +34,7 @@ class ListForm extends Component {
   }
 
   handleResponse = (response) => {
-    this.props.setListInfo(response)
+    this.props.setListDetails(response)
     this.props.history.push("/list")
   }
 
@@ -61,15 +61,15 @@ class ListForm extends Component {
   }
 }
 
-let setListInfo = (response) => {
+let setListDetails = (response) => {
   return {
-    type: "SET_LIST_INFO",
+    type: "SET_LIST_DETAILS",
     payload: response
   }
 }
 
 let mapDispatchToProps = {
-  setListInfo: setListInfo,
+  setListDetails: setListDetails,
 }
 
 let MagicalComponent = withRouter(ListForm)

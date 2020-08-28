@@ -9,6 +9,11 @@
       "title": "test",
       "people": "test 1\ntest 2\ntest 3",
       "id": 2
+    },
+    {
+      "title": "test list",
+      "people": "abc\ndef\nsdf\nfghgghf\nvcv",
+      "id": 3
     }
   ]
 }
