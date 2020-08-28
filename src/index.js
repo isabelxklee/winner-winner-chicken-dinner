@@ -15,7 +15,7 @@ let initialState = {
   lists: [],
   id: 0,
   title: "",
-  people: ""
+  people: []
 }
 
 let listsReducer = (state = initialState, action) => {
@@ -31,6 +31,11 @@ let listsReducer = (state = initialState, action) => {
         id: action.payload.id,
         title: action.payload.title,
         people: action.payload.people,        
+      }
+    case "CREATE_LIST":
+      return {
+        ...state,
+        lists: [...state.lists, action.payload]
       }
     default:
       return state

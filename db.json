@@ -3,22 +3,22 @@
     {
       "id": 1,
       "title": "klee family",
-      "people": "isabel klee, ryan nylander, frankie"
+      "people": [
+        "isabel klee",
+        "ryan nylander",
+        "frankie"
+      ]
     },
     {
-      "title": "test",
-      "people": "test 1\ntest 2\ntest 3",
+      "title": "fruits",
+      "people": [
+        "banana",
+        "yummy",
+        "blub",
+        "orange",
+        "grapefruit"
+      ],
       "id": 2
-    },
-    {
-      "title": "test list",
-      "people": "abc\ndef\nsdf\nfghgghf\nvcv",
-      "id": 3
-    },
-    {
-      "title": "testing list abc",
-      "people": "apple\norange\nbanana\ngrape\nfruits\nsomething\nelse",
-      "id": 4
     }
   ]
 }

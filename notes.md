@@ -29,3 +29,7 @@ fruits
 - create a lists array in db.json
 - every time a user creates a list, destroy any existing lists
 - therefore, there should only ever be one list in db.json at any time
+
+## Capturing the user's list of names
+- can i turn the string into an array upon creation?
+- and then use .each to display back the array as a list? 

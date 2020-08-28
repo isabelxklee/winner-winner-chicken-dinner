@@ -12,37 +12,16 @@ class List extends Component {
     })
   }
 
-  findTitle = () => {
-    let firstList = this.props.lists[this.props.lists.length-1]
-
-    if(typeof firstList != "undefined") {
-      return firstList.title
-    }
-  }
-
-  remove_linebreaks = (string) => { 
-    return string.replace( /[\r\n]+/gm, ", " ).split(", ")
-  }
-
-  findPeople = () => {
-    let firstList = this.props.lists[this.props.lists.length-1]
-
-    if(typeof firstList != "undefined") {
-      let peopleArray = this.remove_linebreaks(firstList.people)
-      return peopleArray.map((person) => {
-        return <li key={person}>{person}</li>
-      })
-   }
-  }
-
   render() {
-    console.log(this.props.title)
+    let peopleArray = this.props.people.map((person) => {
+      return <li key={person}> {person} </li>
+    })
 
     return (
       <div>
-        <h1>{ this.findTitle() }</h1>
+        <h1>{ this.props.title }</h1>
         <ul>
-          { this.findPeople() }
+          { peopleArray }
         </ul>
         <Link to="/edit-list" exact="true"><button>Edit list</button></Link>
         <Link to="/spin-the-wheel" exact="true"><button>Spin the wheel</button></Link>
@@ -58,16 +37,8 @@ let setLists = (response) => {
   }
 }
 
-let setListDetails = (response) => {
-  return {
-    type: "SET_LIST_DETAILS",
-    payload: response
-  }
-}
-
 let mapDispatchToProps = {
-  setLists: setLists,
-  setListDetails: setListDetails
+  setLists: setLists
 }
 
 let mapStateToProps = (globalState) => {

@@ -5,7 +5,19 @@ import {connect} from 'react-redux'
 class ListForm extends Component {
   state = {
     title: "",
-    people: ""
+    people: []
+  }
+
+  componentDidMount() {
+    fetch(this.props.localURL)
+    .then(r => r.json())
+    .then((listsArray) => {
+      this.props.setLists(listsArray)
+    })
+  }
+
+  remove_linebreaks = (string) => { 
+    return string.replace( /[\r\n]+/gm, ", " ).split(", ")
   }
 
   handleChange = (event) => {
@@ -16,15 +28,15 @@ class ListForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    let { title, people } = this.state
-    
+
     fetch(`${this.props.localURL}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        title, people
+        title: this.state.title,
+        people: this.remove_linebreaks(this.state.people)
       })
     })
     .then(r => r.json())
@@ -34,11 +46,14 @@ class ListForm extends Component {
   }
 
   handleResponse = (response) => {
+    console.log(response)
     this.props.setListDetails(response)
+    this.props.createList(response)
     this.props.history.push("/list")
   }
 
   render() {
+
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -61,6 +76,13 @@ class ListForm extends Component {
   }
 }
 
+let setLists = (response) => {
+  return {
+    type: "SET_ALL_LISTS",
+    payload: response
+  }
+}
+
 let setListDetails = (response) => {
   return {
     type: "SET_LIST_DETAILS",
@@ -68,8 +90,17 @@ let setListDetails = (response) => {
   }
 }
 
+let createList = (response) => {
+  return {
+    type: "CREATE_LIST",
+    payload: response
+  }
+}
+
 let mapDispatchToProps = {
+  setLists: setLists,
   setListDetails: setListDetails,
+  createList: createList
 }
 
 let MagicalComponent = withRouter(ListForm)
