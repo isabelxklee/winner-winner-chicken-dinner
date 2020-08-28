@@ -33,28 +33,40 @@ class Generator extends Component {
   }
 
   handleChange = () => {
-    let arr = this.formatLocalStorage()
-    let i = 0
+    let arrLength = this.formatLocalStorage().length
 
-    while (i < arr.length) {
+    if (this.state.luckyIndex < arrLength) {
       this.setState({
-        luckyIndex: this.state.luckyIndex += i
+        luckyIndex: this.state.luckyIndex + 1
       })
-      i++
+    } else {
+      console.log("this is the last number!")
     }
+  }
+
+  peopleLeft = () => {
+    
   }
 
   render() {
     console.log(this.formatLocalStorage())
     console.log(this.state.luckyIndex)
 
+    let peopleLeft = this.formatLocalStorage().length - this.state.luckyIndex - 1
+
     return (
       <div>
         <h3>Who's the lucky duck?</h3>
         <h1>placeholder name</h1>
+        <p>There are {peopleLeft} people left.</p>
 
-        <p>There are 0 people left.</p>
-        <button name="this is a button" onClick={this.handleChange}>Next spin</button>
+        { peopleLeft === 0
+          ?
+          <button name="this is a button" onClick={this.handleChange} disabled>Next spin</button>
+          :
+          <button name="this is a button" onClick={this.handleChange}>Next spin</button>
+        }
+        
       </div>
     )
   }
