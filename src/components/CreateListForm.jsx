@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import {withRouter } from 'react-router-dom'
 import {connect} from 'react-redux'
+import TextArea from '../styled-components/TextArea.jsx'
+import InputField from '../styled-components/InputField.jsx'
 
 class CreateListForm extends Component {
   state = {
@@ -63,13 +65,13 @@ class CreateListForm extends Component {
         <form onSubmit={this.handleSubmit}>
           <h3>List title</h3>
           <p>What’s the purpose of this list? Is it for a stand down meeting? Or are you and your friends trying to figure out who gets to pet the cute dog next?</p>
-          <input type="text" name="title" value={this.state.title} onChange={this.handleChange} autoComplete="off" />
+          <InputField type="text" name="title" value={this.state.title} onChange={this.handleChange} autoComplete="off" />
           
           <br />
 
           <h3>Enter a list of names</h3>
           <p>Please enter all the names on a separate line. Otherwise you will break this machine. And it will be very sad.</p>
-          <textarea name="people" value={this.state.people} onChange={this.handleChange} autoComplete="off" />
+          <TextArea name="people" value={this.state.people} onChange={this.handleChange} autoComplete="off" />
 
           <br />
 

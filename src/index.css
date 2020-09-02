@@ -33,6 +33,10 @@ h1 {
   line-height: 1em;
 }
 
+p {
+  font-size: 1.2em;
+}
+
 @media(max-width: 720px) {
   h1 {
     font-size: 3em;
