@@ -3,6 +3,7 @@ import {withRouter } from 'react-router-dom'
 import {connect} from 'react-redux'
 import TextArea from '../styled-components/TextArea.jsx'
 import InputField from '../styled-components/InputField.jsx'
+import Button from '../styled-components/Button.jsx'
 
 class CreateListForm extends Component {
   state = {
@@ -60,6 +61,8 @@ class CreateListForm extends Component {
 
   render() {
 
+    console.log(this.state.people.length)
+
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -75,7 +78,12 @@ class CreateListForm extends Component {
 
           <br />
 
-          <input type="submit" value="Create list" />
+          { this.state.people.length === 0
+            ?
+            <Button type="submit" disabled>Create list</Button>
+            :
+            <Button type="submit" primary>Create list</Button>
+          }
         </form>
       </div>
     )
