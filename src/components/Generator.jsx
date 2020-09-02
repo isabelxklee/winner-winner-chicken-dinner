@@ -5,7 +5,8 @@ const chance = require('chance').Chance()
 
 class Generator extends Component {
   state = {
-    luckyIndex: 0
+    luckyIndex: 0,
+    array: []
   }
 
   componentDidMount() {
@@ -13,6 +14,7 @@ class Generator extends Component {
     .then(r => r.json())
     .then((listsArray) => {
       this.props.setLists(listsArray)
+      this.formatLocalStorage()
     })
   }
 
@@ -24,7 +26,10 @@ class Generator extends Component {
     let peopleArray = this.formatStringToArr(localStorage.people)
     peopleArray = chance.shuffle(peopleArray)
     localStorage.setItem("people", peopleArray.join(", "))
-    return peopleArray
+
+    this.setState({
+      array: peopleArray
+    })
 
     // localStorage.people returns a string
     // turn that string into an array
@@ -33,7 +38,7 @@ class Generator extends Component {
   }
 
   handleChange = () => {
-    let arrLength = this.formatLocalStorage().length
+    let arrLength = this.state.array.length
 
     if (this.state.luckyIndex < arrLength) {
       this.setState({
@@ -49,15 +54,15 @@ class Generator extends Component {
   }
 
   render() {
-    console.log(this.formatLocalStorage())
-    console.log(this.state.luckyIndex)
+    console.log(this.state.array)
+    console.log(`Lucky index: ${this.state.luckyIndex}`)
 
-    let peopleLeft = this.formatLocalStorage().length - this.state.luckyIndex - 1
+    let peopleLeft = this.state.array.length - this.state.luckyIndex - 1
 
     return (
       <div>
         <h3>Who's the lucky duck?</h3>
-        <h1>placeholder name</h1>
+        <h1>{this.state.array[this.state.luckyIndex]}</h1>
         <p>There are {peopleLeft} people left.</p>
 
         { peopleLeft === 0
