@@ -37,6 +37,20 @@ p {
   font-size: 1.2em;
 }
 
+ul {
+  margin-bottom: 3em;
+  list-style: none;
+}
+
+li {
+  text-indent: -1.7em;
+  font-size: 1.2em;
+}
+
+li::before {
+  content: "🌱 ";
+}
+
 @media(max-width: 720px) {
   h1 {
     font-size: 3em;
