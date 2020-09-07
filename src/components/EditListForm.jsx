@@ -75,8 +75,9 @@ class EditListForm extends Component {
     return (
       <>
         <Header>
-        <LinkButton href="/" secondary>Home</LinkButton>
-      </Header>
+          <LinkButton href="/" secondary>Home</LinkButton>
+          <LinkButton href="/list" secondary>Back to list</LinkButton>
+        </Header>
 
         <Wrapper>
           <form onSubmit={this.handleSubmit}>
@@ -90,12 +91,11 @@ class EditListForm extends Component {
 
             <div className="section">
               <h3>Enter a list</h3>
-              <p>Write all the items or names separated by a comma. For example, "apple, orange,banana."</p>
+              <p>Write all the items or names separated by a comma. For example, "apple, orange, banana."</p>
               <TextArea name="people" value={this.state.people} onChange={this.handleChange} autoComplete="off" />
             </div>
 
             <Button type="submit" primary>Save changes</Button>
-            <LinkButton href="/list" primary>Cancel</LinkButton>
           </form>
 
           <div className="danger">

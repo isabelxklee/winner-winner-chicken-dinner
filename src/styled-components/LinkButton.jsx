@@ -7,7 +7,7 @@ const LinkButton = styled.a`
   background-color: ${props => props.secondary ? "none" : "black"};
   border: ${props => props.secondary ? "none" : "1px solid black"};
   font-family: "Roboto Mono",monospace;
-  font-size: ${props => props.secondary ? "1.4em" : "1em"};
+  font-size: ${props => props.secondary ? "1.2em" : "1em"};
   font-weight: 700;
   text-decoration: ${props => props.secondary ? "underline" : "none"};
   display: inline-block;

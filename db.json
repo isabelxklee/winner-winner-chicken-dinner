@@ -8,6 +8,15 @@
         "ryan nylander",
         "frankie"
       ]
+    },
+    {
+      "title": "fruits",
+      "people": [
+        "apple",
+        "orange",
+        "banana"
+      ],
+      "id": 2
     }
   ]
 }

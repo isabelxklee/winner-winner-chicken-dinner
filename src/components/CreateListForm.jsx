@@ -67,12 +67,6 @@ class CreateListForm extends Component {
       <>
         <Header>
           <LinkButton href="/" secondary>Home</LinkButton>
-          {/* { localStorage.length > 0
-          ?
-          <LinkButton href="/list" secondary>See my existing list</LinkButton>
-          :
-          <></>
-          } */}
         </Header>
         
         <Wrapper>
@@ -87,7 +81,7 @@ class CreateListForm extends Component {
 
             <div className="section">
               <h3>Enter a list</h3>
-              <p>Write all the items or names separated by a comma. For example, "apple, orange,banana."</p>
+              <p>Write all the items or names separated by a comma. For example, "apple, orange, banana."</p>
               <TextArea name="people" value={this.state.people} onChange={this.handleChange} autoComplete="off" />
             </div>
 
