@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import {withRouter } from 'react-router-dom'
 import {connect} from 'react-redux'
+import Wrapper from '../styled-components/Wrapper'
+import Button from '../styled-components/Button.jsx'
+import LinkButton from '../styled-components/LinkButton.jsx'
 const chance = require('chance').Chance()
 
 class Generator extends Component {
@@ -60,19 +63,25 @@ class Generator extends Component {
     let peopleLeft = this.state.array.length - this.state.luckyIndex - 1
 
     return (
-      <div>
+      <Wrapper>
         <h3>Who's the lucky duck?</h3>
         <h1>{this.state.array[this.state.luckyIndex]}</h1>
-        <p>There are {peopleLeft} people left.</p>
+
+        { peopleLeft === 1
+          ?
+          <p>There is {peopleLeft} left.</p>
+          :
+          <p>There are {peopleLeft} left.</p>
+        }
 
         { peopleLeft === 0
           ?
-          <button name="this is a button" onClick={this.handleChange} disabled>Next spin</button>
+          <LinkButton href="/list" primary>Done</LinkButton>
           :
-          <button name="this is a button" onClick={this.handleChange}>Next spin</button>
+          <Button onClick={this.handleChange} primary>Next spin</Button>
         }
         
-      </div>
+      </Wrapper>
     )
   }
 }

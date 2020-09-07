@@ -10,6 +10,7 @@ const LinkButton = styled.a`
   font-size: 1em;
   font-weight: 700;
   text-decoration: none;
+  display: inline-block;
 
   @media(max-width: 720px) {
     
