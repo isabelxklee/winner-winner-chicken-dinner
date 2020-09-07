@@ -35,7 +35,7 @@ class CreateListForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
 
-    fetch(`${this.props.localURL}`, {
+    fetch(`${this.props.deployURL}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

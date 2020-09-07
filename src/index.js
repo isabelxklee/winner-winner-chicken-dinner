@@ -11,6 +11,7 @@ import {Provider} from 'react-redux'
 import './index.css'
 
 const API = "http://localhost:3001/lists"
+const production = "http://winnerwinnerapp.com"
 
 let initialState = {
   lists: [],
@@ -55,11 +56,11 @@ ReactDOM.render(
   <Provider store={store}>    
     <BrowserRouter>
       <div>
-        <Route exact path="/"><Home localURL={API} /></Route>
-        <Route exact path="/create-list"><CreateListForm localURL={API} /></Route>
-        <Route exact path="/list"><List localURL={API} /></Route>
-        <Route exact path="/edit-list"><EditListForm localURL={API} /></Route>
-        <Route exact path="/spin-the-wheel"><Generator localURL={API} /></Route>
+        <Route exact path="/"><Home localURL={API} deployURL={production} /></Route>
+        <Route exact path="/create-list"><CreateListForm localURL={API} deployURL={production} /></Route>
+        <Route exact path="/list"><List localURL={API} deployURL={production} /></Route>
+        <Route exact path="/edit-list"><EditListForm localURL={API} deployURL={production} /></Route>
+        <Route exact path="/spin-the-wheel"><Generator localURL={API} deployURL={production} /></Route>
       </div>
     </BrowserRouter>
   </Provider>,
