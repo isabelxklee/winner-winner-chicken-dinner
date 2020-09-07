@@ -83,6 +83,12 @@ class EditListForm extends Component {
 
             <Button type="submit" primary>Save changes</Button>
             <LinkButton href="/list" primary>Cancel</LinkButton>
+
+            <div className="danger">
+              <h3>Danger zone</h3>
+              <p>Deleting a list is permanent, so make sure you're making the right decision!</p>
+              <Button type="submit" primary>Delete list</Button>
+            </div>
           </form>
         </Wrapper>
       </>

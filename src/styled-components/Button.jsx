@@ -11,6 +11,7 @@ const Button = styled.button`
   font-weight: 700;
   text-decoration: none;
   opacity: ${props => props.primary ? "1" : "0.4"};
+  cursor: pointer;
 
   @media(max-width: 720px) {
     

@@ -52,9 +52,12 @@
     {
       "title": "testing",
       "people": [
-        "testingm",
-        "testinga",
-        "testingb"
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f"
       ],
       "id": 5
     }
