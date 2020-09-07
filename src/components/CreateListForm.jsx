@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import TextArea from '../styled-components/TextArea.jsx'
 import InputField from '../styled-components/InputField.jsx'
 import Button from '../styled-components/Button.jsx'
+import Wrapper from '../styled-components/Wrapper'
 
 class CreateListForm extends Component {
   state = {
@@ -61,8 +62,9 @@ class CreateListForm extends Component {
 
   render() {
     return (
-      <div>
+      <Wrapper>
         <form onSubmit={this.handleSubmit}>
+          <h1>Create your list</h1>
 
           <div className="section">
             <h3>List title</h3>
@@ -84,7 +86,7 @@ class CreateListForm extends Component {
             <Button type="submit" primary>Create list</Button>
           }
         </form>
-      </div>
+      </Wrapper>
     )
   }
 }
