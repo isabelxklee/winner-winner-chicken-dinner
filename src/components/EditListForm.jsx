@@ -32,6 +32,19 @@ class EditListForm extends Component {
     })
   }
 
+  deleteList = () => {
+    fetch(`${this.props.localURL}/${localStorage.id}`, {
+      method: "DELETE"
+    })
+    .then(r => r.json())
+    .then(this.handleDeleteResponse)
+  }
+
+  handleDeleteResponse = () => {
+    localStorage.clear()
+    this.props.history.push("/")
+  }
+
   handleSubmit = (event) => {
     event.preventDefault()
     
@@ -83,13 +96,14 @@ class EditListForm extends Component {
 
             <Button type="submit" primary>Save changes</Button>
             <LinkButton href="/list" primary>Cancel</LinkButton>
-
-            <div className="danger">
-              <h3>Danger zone</h3>
-              <p>Deleting a list is permanent, so make sure you're making the right decision!</p>
-              <Button type="submit" primary>Delete list</Button>
-            </div>
           </form>
+
+          <div className="danger">
+            <h3>Danger zone</h3>
+            <p>Deleting a list is permanent, so make sure you're making the right decision!</p>
+            <Button onClick={this.deleteList} primary>Delete list</Button>
+          </div>
+          
         </Wrapper>
       </>
     )
