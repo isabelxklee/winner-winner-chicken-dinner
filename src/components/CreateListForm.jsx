@@ -15,7 +15,7 @@ class CreateListForm extends Component {
   }
 
   componentDidMount() {
-    fetch(this.props.deployURL)
+    fetch(this.props.localURL)
     .then(r => r.json())
     .then((listsArray) => {
       this.props.setLists(listsArray)
@@ -35,7 +35,7 @@ class CreateListForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
 
-    fetch(`${this.props.deployURL}`, {
+    fetch(`${this.props.localURL}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

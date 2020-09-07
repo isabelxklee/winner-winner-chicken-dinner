@@ -7,7 +7,7 @@ import Header from '../styled-components/Header.jsx'
 
 class List extends Component {
   componentDidMount() {
-    fetch(this.props.deployURL)
+    fetch(this.props.localURL)
     .then(r => r.json())
     .then((listsArray) => {
       this.props.setLists(listsArray)
