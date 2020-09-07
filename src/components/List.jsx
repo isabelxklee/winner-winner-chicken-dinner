@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import {withRouter } from 'react-router-dom'
-import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
+import Wrapper from '../styled-components/Wrapper'
+import LinkButton from '../styled-components/LinkButton.jsx'
 
 class List extends Component {
   componentDidMount() {
@@ -27,14 +28,14 @@ class List extends Component {
     })
 
     return (
-      <div>
+      <Wrapper>
         <h1>{ localStorage.title }</h1>
         <ul>
           { peopleArray }
         </ul>
-        <Link to="/edit-list" exact="true"><button>Edit list</button></Link>
-        <Link to="/spin-the-wheel" exact="true"><button>Spin the wheel</button></Link>
-      </div>
+        <LinkButton primary href="/edit-list">Edit list</LinkButton>
+        <LinkButton primary href="/spin-the-wheel">Spin the wheel</LinkButton>
+      </Wrapper>
     )
   }
 }

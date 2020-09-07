@@ -60,9 +60,6 @@ class CreateListForm extends Component {
   }
 
   render() {
-
-    console.log(this.state.people.length)
-
     return (
       <div>
         <form onSubmit={this.handleSubmit}>

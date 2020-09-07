@@ -13,52 +13,15 @@
       "title": "fruits",
       "people": [
         "orange",
+        "mango",
         "banana",
-        "grapefruit",
-        "bloobs",
-        "purple",
-        "yummy",
-        "coconut",
-        "strawbs",
-        "dragonfruit"
+        "apple",
+        "pineapple",
+        "tomato",
+        "grape",
+        "papaya"
       ],
       "id": 2
-    },
-    {
-      "title": "test",
-      "people": [
-        "test 1",
-        "test 2",
-        "test 3"
-      ],
-      "id": 3
-    },
-    {
-      "title": "some other test",
-      "people": [
-        "person,",
-        "someone,",
-        "someone else,",
-        "lulu",
-        "lala",
-        "hoohoo",
-        "haha"
-      ],
-      "id": 4
-    },
-    {
-      "title": "",
-      "people": [
-        "sdfsdfsdfsdfdssdf"
-      ],
-      "id": 5
-    },
-    {
-      "title": "",
-      "people": [
-        "sdflskdjfsdlkfskjldfsdjfsf"
-      ],
-      "id": 6
     }
   ]
 }
