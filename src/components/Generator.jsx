@@ -63,15 +63,17 @@ class Generator extends Component {
     let peopleLeft = this.state.array.length - this.state.luckyIndex - 1
 
     return (
-      <Wrapper>
-        <h3>Who's the lucky duck?</h3>
-        <h1>{this.state.array[this.state.luckyIndex]}</h1>
+      <Wrapper secondary>
+        <div className="lucky-duck">
+          <h3>Who's the lucky duck?</h3>
+          <h1 id="lucky-duck">{this.state.array[this.state.luckyIndex]}</h1>
+        </div>
 
         { peopleLeft === 1
           ?
-          <p>There is {peopleLeft} left.</p>
+          <p>There is <strong>{peopleLeft} left.</strong></p>
           :
-          <p>There are {peopleLeft} left.</p>
+          <p>There are <strong>{peopleLeft} left.</strong></p>
         }
 
         { peopleLeft === 0
