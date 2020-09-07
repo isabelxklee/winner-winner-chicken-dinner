@@ -15,7 +15,7 @@ class CreateListForm extends Component {
   }
 
   componentDidMount() {
-    fetch(this.props.localURL)
+    fetch(this.props.deployURL)
     .then(r => r.json())
     .then((listsArray) => {
       this.props.setLists(listsArray)
