@@ -3,6 +3,7 @@ import {withRouter } from 'react-router-dom'
 import {connect} from 'react-redux'
 import Wrapper from '../styled-components/Wrapper'
 import LinkButton from '../styled-components/LinkButton.jsx'
+import Header from '../styled-components/Header.jsx'
 
 class List extends Component {
   componentDidMount() {
@@ -28,14 +29,21 @@ class List extends Component {
     })
 
     return (
-      <Wrapper>
-        <h1>{ localStorage.title }</h1>
-        <ul>
-          { peopleArray }
-        </ul>
-        <LinkButton primary href="/edit-list">Edit list</LinkButton>
-        <LinkButton primary href="/spin-the-wheel">Spin the wheel</LinkButton>
-      </Wrapper>
+      <>
+        <Header>
+          <LinkButton href="/" secondary>Home</LinkButton>
+          {/* <LinkButton href="/create-list" secondary>Create a new list</LinkButton> */}
+        </Header>
+
+        <Wrapper>
+          <h1>{ localStorage.title }</h1>
+          <ul>
+            { peopleArray }
+          </ul>
+          <LinkButton primary href="/edit-list">Edit list</LinkButton>
+          <LinkButton primary href="/spin-the-wheel">Spin the wheel</LinkButton>
+        </Wrapper>
+      </>
     )
   }
 }

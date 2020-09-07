@@ -5,6 +5,8 @@ import Wrapper from '../styled-components/Wrapper'
 import TextArea from '../styled-components/TextArea.jsx'
 import InputField from '../styled-components/InputField.jsx'
 import Button from '../styled-components/Button.jsx'
+import Header from '../styled-components/Header'
+import LinkButton from '../styled-components/LinkButton.jsx'
 
 class EditListForm extends Component {
   state = {
@@ -58,25 +60,32 @@ class EditListForm extends Component {
 
   render() {
     return (
-      <Wrapper>
-        <form onSubmit={this.handleSubmit}>
-          <h1>Edit your list</h1>
+      <>
+        <Header>
+        <LinkButton href="/" secondary>Home</LinkButton>
+      </Header>
 
-          <div className="section">
-            <h3>List title</h3>
-            <p>What's the purpose of this list? Is it for a stand down meeting? Or deciding who gets to pet the cute dog next?</p>
-            <InputField type="text" name="title" value={this.state.title} onChange={this.handleChange} autoComplete="off" />
-          </div>
+        <Wrapper>
+          <form onSubmit={this.handleSubmit}>
+            <h1>Edit your list</h1>
 
-          <div className="section">
-            <h3>Enter a list</h3>
-            <p>Write all the items or names separated by a comma. For example, "apple, orange,banana."</p>
-            <TextArea name="people" value={this.state.people} onChange={this.handleChange} autoComplete="off" />
-          </div>
+            <div className="section">
+              <h3>List title</h3>
+              <p>What's the purpose of this list? Is it for a stand down meeting? Or deciding who gets to pet the cute dog next?</p>
+              <InputField type="text" name="title" value={this.state.title} onChange={this.handleChange} autoComplete="off" />
+            </div>
 
-          <Button type="submit" primary>Save changes</Button>
-        </form>
-      </Wrapper>
+            <div className="section">
+              <h3>Enter a list</h3>
+              <p>Write all the items or names separated by a comma. For example, "apple, orange,banana."</p>
+              <TextArea name="people" value={this.state.people} onChange={this.handleChange} autoComplete="off" />
+            </div>
+
+            <Button type="submit" primary>Save changes</Button>
+            <LinkButton href="/list" primary>Cancel</LinkButton>
+          </form>
+        </Wrapper>
+      </>
     )
   }
 }
