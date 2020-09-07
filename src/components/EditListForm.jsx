@@ -64,13 +64,13 @@ class EditListForm extends Component {
 
           <div className="section">
             <h3>List title</h3>
-            <p>What’s the purpose of this list? Is it for a stand down meeting? Or are you and your friends trying to figure out who gets to pet the cute dog next?</p>
+            <p>What's the purpose of this list? Is it for a stand down meeting? Or deciding who gets to pet the cute dog next?</p>
             <InputField type="text" name="title" value={this.state.title} onChange={this.handleChange} autoComplete="off" />
           </div>
 
           <div className="section">
-            <h3>Enter a list of names</h3>
-            <p>Please enter all the names on a separate line. Otherwise you will break this machine. And it will be very sad.</p>
+            <h3>Enter a list</h3>
+            <p>Write all the items or names separated by a comma. For example, "apple, orange,banana."</p>
             <TextArea name="people" value={this.state.people} onChange={this.handleChange} autoComplete="off" />
           </div>
 

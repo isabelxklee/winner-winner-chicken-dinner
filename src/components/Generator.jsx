@@ -78,7 +78,7 @@ class Generator extends Component {
 
         { peopleLeft === 0
           ?
-          <LinkButton href="/list" primary>Done</LinkButton>
+          <LinkButton href="/list" primary>Back to list</LinkButton>
           :
           <Button onClick={this.handleChange} primary>Next spin</Button>
         }

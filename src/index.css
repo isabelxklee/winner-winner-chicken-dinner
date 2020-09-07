@@ -35,16 +35,18 @@ h1 {
 
 h1#lucky-duck {
   font-size: 6em;
-  margin: 0;
+  margin-top: 0.2em;
 }
 
 h3 {
   font-size: 1.6em;
-  font-weight: 400;
+  font-weight: 700;
+  margin-bottom: 0;
 }
 
 p {
   font-size: 1.2em;
+  margin-top: 0.6em;
 }
 
 ul {
