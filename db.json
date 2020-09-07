@@ -22,6 +22,20 @@
         "papaya"
       ],
       "id": 2
+    },
+    {
+      "title": "veggies",
+      "people": [
+        "potato",
+        "zucchini",
+        "aubergine",
+        "kale",
+        "lettuce",
+        "carrot",
+        "bell pepper",
+        "yam"
+      ],
+      "id": 3
     }
   ]
 }

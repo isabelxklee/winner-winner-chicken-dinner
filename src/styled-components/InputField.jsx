@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const InputField = styled.input`
   height: 3em;
-  width: 65%;
+  width: 75%;
   padding: 0em 1em;
   border: 3px solid black;
   font-family: "Roboto Mono", monospace;

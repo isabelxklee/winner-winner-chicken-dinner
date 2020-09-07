@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import {withRouter } from 'react-router-dom'
 import {connect} from 'react-redux'
+import Wrapper from '../styled-components/Wrapper'
+import TextArea from '../styled-components/TextArea.jsx'
+import InputField from '../styled-components/InputField.jsx'
+import Button from '../styled-components/Button.jsx'
 
 class EditListForm extends Component {
   state = {
@@ -54,23 +58,25 @@ class EditListForm extends Component {
 
   render() {
     return (
-      <div>
+      <Wrapper>
         <form onSubmit={this.handleSubmit}>
-          <h3>List title</h3>
-          <p>What’s the purpose of this list? Is it for a stand down meeting? Or are you and your friends trying to figure out who gets to pet the cute dog next?</p>
-          <input type="text" name="title" value={this.state.title} onChange={this.handleChange} autoComplete="off" />
-          
-          <br />
+          <h1>Edit your list</h1>
 
-          <h3>Enter a list of names</h3>
-          <p>Please enter all the names on a separate line. Otherwise you will break this machine. And it will be very sad.</p>
-          <textarea name="people" value={this.state.people} onChange={this.handleChange} autoComplete="off" />
+          <div className="section">
+            <h3>List title</h3>
+            <p>What’s the purpose of this list? Is it for a stand down meeting? Or are you and your friends trying to figure out who gets to pet the cute dog next?</p>
+            <InputField type="text" name="title" value={this.state.title} onChange={this.handleChange} autoComplete="off" />
+          </div>
 
-          <br />
+          <div className="section">
+            <h3>Enter a list of names</h3>
+            <p>Please enter all the names on a separate line. Otherwise you will break this machine. And it will be very sad.</p>
+            <TextArea name="people" value={this.state.people} onChange={this.handleChange} autoComplete="off" />
+          </div>
 
-          <input type="submit" value="Save changes" />
+          <Button type="submit" primary>Save changes</Button>
         </form>
-      </div>
+      </Wrapper>
     )
   }
 }
