@@ -5,6 +5,7 @@ import List from './components/List'
 import EditListForm from './components/EditListForm'
 import Generator from './components/Generator'
 import CreateListForm from './components/CreateListForm'
+import Footer from './styled-components/Footer'
 import {BrowserRouter, Route} from 'react-router-dom'
 import './index.css'
 
@@ -16,6 +17,7 @@ ReactDOM.render(
         <Route exact path="/list"><List /></Route>
         <Route exact path="/edit-list"><EditListForm /></Route>
         <Route exact path="/spin-the-wheel"><Generator /></Route>
+        <Footer>hello world</Footer>
       </div>
     </BrowserRouter>,
   document.getElementById('root')

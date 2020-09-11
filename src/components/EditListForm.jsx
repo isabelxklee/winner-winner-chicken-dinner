@@ -39,7 +39,7 @@ class EditListForm extends Component {
           <LinkButton href="/list" secondary>Back to list</LinkButton>
         </Header>
 
-        <Wrapper>
+        <Wrapper secondary>
           <form onSubmit={this.handleSubmit}>
             <h1>Edit your list</h1>
 
