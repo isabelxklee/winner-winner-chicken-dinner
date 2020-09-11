@@ -1,5 +1,5 @@
 Winner winner, chicken dinner! 🐓
-========================
+Enter a list and spin the wheel to get a random winner each time.
 
 ## Table of contents
 * [Features](#features)
@@ -31,9 +31,9 @@ Winner winner, chicken dinner! 🐓
     
 6. Open your browser and navigate to `http://localhost:3001/`.
 
-<a name="tech-stack"/>
+<a name="tools"/>
 
-## Tech stack
+## Tools
 * React.js
 * Redux
 * HTML/CSS
