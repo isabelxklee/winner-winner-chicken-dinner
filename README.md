@@ -9,6 +9,10 @@ Enter a list and spin the wheel to get a random winner each time. 🔮
 <a name="features"/>
 
 ## Features
+* Enter a list of names or objects.
+* Edit and delete your list.
+* Always access your most recently created list with localStorage.
+* Spin the wheel to generate a random winner and see how many people or objects are left in the list. 
 
 <a name="getting-started"/>
 
