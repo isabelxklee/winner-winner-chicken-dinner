@@ -24,6 +24,7 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+  margin: 0;
 }
 
 h1 {
@@ -81,6 +82,14 @@ div.lucky-duck {
 
 @media(max-width: 720px) {
   h1 {
-    font-size: 3em;
+    font-size: 2.8em;
+  }
+
+  div.section {
+    margin-top: 2em;
+  }
+
+  p {
+    margin: 0.6em;
   }
 }

@@ -6,7 +6,7 @@ const Header = styled.div`
   top: 0;
 
   @media(max-width: 720px) {
-    padding: 4em;
+    padding: 2em 1em 0em 1em;
   }
 `
 

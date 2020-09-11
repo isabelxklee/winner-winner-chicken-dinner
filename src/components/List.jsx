@@ -25,7 +25,7 @@ class List extends Component {
           <LinkButton href="/" secondary>Home</LinkButton>
         </Header>
 
-        <Wrapper>
+        <Wrapper secondary>
           <h1>{ localStorage.title }</h1>
           <ul>
             { peopleArray }

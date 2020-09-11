@@ -5,7 +5,7 @@ import Wrapper from '../styled-components/Wrapper'
 class Home extends Component {
   render() {
     return (
-      <Wrapper secondary>
+      <Wrapper primary>
         <h1>Winner winner, chicken dinner!</h1>
         <p>Enter a list and spin the wheel to get a random winner each time. Ready to get started?</p>
 

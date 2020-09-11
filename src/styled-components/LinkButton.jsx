@@ -11,9 +11,11 @@ const LinkButton = styled.a`
   font-weight: 700;
   text-decoration: ${props => props.secondary ? "underline" : "none"};
   display: inline-block;
+  text-align: center;
 
   @media(max-width: 720px) {
-    
+    width: 80%;
+    margin: 0.6em;
   }
 `
 
