@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {withRouter } from 'react-router-dom'
-import {connect} from 'react-redux'
+ 
 import TextArea from '../styled-components/TextArea.jsx'
 import InputField from '../styled-components/InputField.jsx'
 import Button from '../styled-components/Button.jsx'
@@ -12,14 +12,6 @@ class CreateListForm extends Component {
   state = {
     title: "",
     people: []
-  }
-
-  componentDidMount() {
-    fetch(this.props.localURL)
-    .then(r => r.json())
-    .then((listsArray) => {
-      this.props.setLists(listsArray)
-    })
   }
 
   formatStringToArr = (string) => { 
@@ -34,30 +26,12 @@ class CreateListForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-
-    fetch(`${this.props.localURL}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        title: this.state.title,
-        people: this.formatStringToArr(this.state.people)
-      })
-    })
-    .then(r => r.json())
-    .then((newList) => {
-      this.handleResponse(newList)
-    })
-  }
-
-  handleResponse = (response) => {
-    console.log(response)
-    this.props.setListDetails(response)
-    this.props.createList(response)
-    localStorage.setItem("id", response.id)
-    localStorage.setItem("title", response.title)
-    localStorage.setItem("people", response.people.join(", "))
+    console.log(event)
+    this.props.setListDetails(event)
+    this.props.createList(event)
+    localStorage.setItem("id", event.id)
+    localStorage.setItem("title", event.title)
+    localStorage.setItem("people", event.people.join(", "))
     console.log(localStorage)
     this.props.history.push("/list")
   }
@@ -98,33 +72,4 @@ class CreateListForm extends Component {
   }
 }
 
-let setLists = (response) => {
-  return {
-    type: "SET_ALL_LISTS",
-    payload: response
-  }
-}
-
-let setListDetails = (response) => {
-  return {
-    type: "SET_LIST_DETAILS",
-    payload: response
-  }
-}
-
-let createList = (response) => {
-  return {
-    type: "CREATE_LIST",
-    payload: response
-  }
-}
-
-let mapDispatchToProps = {
-  setLists: setLists,
-  setListDetails: setListDetails,
-  createList: createList
-}
-
-let MagicalComponent = withRouter(CreateListForm)
-
-export default connect(null, mapDispatchToProps)(MagicalComponent)
+export default withRouter(CreateListForm)

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {withRouter } from 'react-router-dom'
-import {connect} from 'react-redux'
+ 
 import Wrapper from '../styled-components/Wrapper'
 import Button from '../styled-components/Button.jsx'
 import LinkButton from '../styled-components/LinkButton.jsx'
@@ -12,14 +12,14 @@ class Generator extends Component {
     array: []
   }
 
-  componentDidMount() {
-    fetch(this.props.localURL)
-    .then(r => r.json())
-    .then((listsArray) => {
-      this.props.setLists(listsArray)
-      this.formatLocalStorage()
-    })
-  }
+  // componentDidMount() {
+  //   fetch(this.props.localURL)
+  //   .then(r => r.json())
+  //   .then((listsArray) => {
+  //     this.props.setLists(listsArray)
+  //     this.formatLocalStorage()
+  //   })
+  // }
 
   formatStringToArr = (string) => { 
     return string.replace( /[\r\n]+/gm, ", " ).split(", ")
@@ -33,11 +33,6 @@ class Generator extends Component {
     this.setState({
       array: peopleArray
     })
-
-    // localStorage.people returns a string
-    // turn that string into an array
-    // shuffle the array
-    // then save it again as a string to localStorage
   }
 
   handleChange = () => {
@@ -88,34 +83,4 @@ class Generator extends Component {
   }
 }
 
-let setLists = (response) => {
-  return {
-    type: "SET_ALL_LISTS",
-    payload: response
-  }
-}
-
-let setListDetails = (response) => {
-  return {
-    type: "SET_LIST_DETAILS",
-    payload: response
-  }
-}
-
-let mapDispatchToProps = {
-  setLists: setLists,
-  setListDetails: setListDetails
-}
-
-let mapStateToProps = (globalState) => {
-  return {
-    lists: globalState.listInfo.lists,
-    id: globalState.listInfo.id,
-    title: globalState.listInfo.title,
-    people: globalState.listInfo.people    
-  }
-}
-
-let MagicalComponent = withRouter(Generator)
-
-export default connect(mapStateToProps, mapDispatchToProps)(MagicalComponent)
+export default withRouter(Generator)

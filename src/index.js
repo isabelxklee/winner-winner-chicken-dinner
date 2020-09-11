@@ -6,63 +6,17 @@ import EditListForm from './components/EditListForm'
 import Generator from './components/Generator'
 import CreateListForm from './components/CreateListForm'
 import {BrowserRouter, Route} from 'react-router-dom'
-import {createStore, combineReducers} from 'redux'
-import {Provider} from 'react-redux'
 import './index.css'
 
-const API = "http://localhost:3001/lists"
-const production = "http://winnerwinnerapp.com"
-
-let initialState = {
-  lists: [],
-  id: 0,
-  title: "",
-  people: []
-}
-
-let listsReducer = (state = initialState, action) => {
-  switch(action.type) {
-    case "SET_ALL_LISTS":
-      return {
-        ...state,
-        lists: action.payload
-      }
-    case "SET_LIST_DETAILS":
-      return {
-        ...state,
-        id: action.payload.id,
-        title: action.payload.title,
-        people: action.payload.people,        
-      }
-    case "CREATE_LIST":
-      return {
-        ...state,
-        lists: [...state.lists, action.payload]
-      }
-    default:
-      return state
-  }
-}
-
-let singleObject = {
-  listInfo: listsReducer
-}
-
-let rootReducer = combineReducers(singleObject)
-
-let store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-
 ReactDOM.render(
-  <Provider store={store}>    
     <BrowserRouter>
       <div>
-        <Route exact path="/"><Home localURL={API} deployURL={production} /></Route>
-        <Route exact path="/create-list"><CreateListForm localURL={API} deployURL={production} /></Route>
-        <Route exact path="/list"><List localURL={API} deployURL={production} /></Route>
-        <Route exact path="/edit-list"><EditListForm localURL={API} deployURL={production} /></Route>
-        <Route exact path="/spin-the-wheel"><Generator localURL={API} deployURL={production} /></Route>
+        <Route exact path="/"><Home /></Route>
+        <Route exact path="/create-list"><CreateListForm /></Route>
+        <Route exact path="/list"><List /></Route>
+        <Route exact path="/edit-list"><EditListForm /></Route>
+        <Route exact path="/spin-the-wheel"><Generator /></Route>
       </div>
-    </BrowserRouter>
-  </Provider>,
+    </BrowserRouter>,
   document.getElementById('root')
 )

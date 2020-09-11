@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {withRouter } from 'react-router-dom'
-import {connect} from 'react-redux'
+ 
 import Wrapper from '../styled-components/Wrapper'
 import TextArea from '../styled-components/TextArea.jsx'
 import InputField from '../styled-components/InputField.jsx'
@@ -14,14 +14,6 @@ class EditListForm extends Component {
     people: localStorage.people
   }
 
-  componentDidMount() {
-    fetch(this.props.localURL)
-    .then(r => r.json())
-    .then((listsArray) => {
-      this.props.setLists(listsArray)
-    })
-  }
-
   formatStringToArr = (string) => { 
     return string.replace( /[\r\n]+/gm, ", " ).split(", ")
   }
@@ -33,41 +25,14 @@ class EditListForm extends Component {
   }
 
   deleteList = () => {
-    fetch(`${this.props.localURL}/${localStorage.id}`, {
-      method: "DELETE"
-    })
-    .then(r => r.json())
-    .then(this.handleDeleteResponse)
-  }
-
-  handleDeleteResponse = () => {
     localStorage.clear()
     this.props.history.push("/")
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
-    
-    fetch(`${this.props.localURL}/${localStorage.id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        title: this.state.title,
-        people: this.formatStringToArr(this.state.people)
-      })
-    })
-    .then(r => r.json())
-    .then((updatedList) => {
-      this.handleResponse(updatedList)
-    })
-  }
-
-  handleResponse = (response) => {
-    this.props.setListDetails(response)
-    localStorage.setItem("title", response.title)
-    localStorage.setItem("people", response.people.join(", "))
+    localStorage.setItem("title", this.state.title)
+    localStorage.setItem("people", this.state.people)
     this.props.history.push("/list")
   }
 
@@ -110,34 +75,4 @@ class EditListForm extends Component {
   }
 }
 
-let setLists = (response) => {
-  return {
-    type: "SET_ALL_LISTS",
-    payload: response
-  }
-}
-
-let setListDetails = (response) => {
-  return {
-    type: "SET_LIST_DETAILS",
-    payload: response
-  }
-}
-
-let mapDispatchToProps = {
-  setListDetails: setListDetails,
-  setLists: setLists
-}
-
-let mapStateToProps = (globalState) => {
-  return {
-    lists: globalState.listInfo.lists,
-    id: globalState.listInfo.id,
-    title: globalState.listInfo.title,
-    people: globalState.listInfo.people    
-  }
-}
-
-let MagicalComponent = withRouter(EditListForm)
-
-export default connect(mapStateToProps, mapDispatchToProps)(MagicalComponent)
+export default withRouter(EditListForm)
