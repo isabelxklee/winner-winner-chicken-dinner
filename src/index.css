@@ -85,11 +85,23 @@ div.lucky-duck {
     font-size: 2.8em;
   }
 
+  h3 {
+    margin-top: 0.4em;
+    font-size: 1.4em;
+  }
+
+  p {
+    font-size: 1em;
+    margin: 0.6em 0.6em 0.6em 0em;
+  }
+  
   div.section {
     margin-top: 2em;
   }
 
-  p {
-    margin: 0.6em;
+  div.danger {
+    width: inherit;
+    margin-top: 3em;
+    padding: 2em;
   }
 }

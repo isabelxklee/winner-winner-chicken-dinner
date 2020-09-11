@@ -14,7 +14,8 @@ const Button = styled.button`
   cursor: pointer;
 
   @media(max-width: 720px) {
-    
+    width: 96%;
+    margin: 0.6em 0em;
   }
 `
 

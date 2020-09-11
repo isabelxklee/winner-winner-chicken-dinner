@@ -15,7 +15,9 @@ const LinkButton = styled.a`
 
   @media(max-width: 720px) {
     width: 80%;
-    margin: 0.6em;
+    margin: 0.6em 0em;
+    padding: ${props => props.secondary ? "0em" : "0.6em 1em"};
+    text-align: ${props => props.secondary ? "left" : "center"};
   }
 `
 

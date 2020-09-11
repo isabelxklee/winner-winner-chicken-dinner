@@ -33,7 +33,7 @@ class CreateListForm extends Component {
           <LinkButton href="/" secondary>Home</LinkButton>
         </Header>
         
-        <Wrapper>
+        <Wrapper secondary>
           <form onSubmit={this.handleSubmit}>
             <h1>Create your list</h1>
 

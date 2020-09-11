@@ -9,7 +9,8 @@ const InputField = styled.input`
   font-size: 1.2em;
 
   @media(max-width: 720px) {
-    width: 100%;
+    width: 80%;
+    margin-top: 1em;
   }
 `
 
