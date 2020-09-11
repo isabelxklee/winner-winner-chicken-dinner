@@ -1,14 +1,14 @@
 # Winner winner, chicken dinner! 🐓
 Enter a list and spin the wheel to get a random winner each time. 🔮
 
-## Table of contents
+### Table of contents
 * [Features](#features)
 * [Getting started](#getting-started)
 * [Tools](#tools)
 
 <a name="features"/>
 
-## Features
+### Features
 * Enter a list of names or objects.
 * Edit and delete your list.
 * Always access your most recently created list with localStorage.
@@ -16,7 +16,7 @@ Enter a list and spin the wheel to get a random winner each time. 🔮
 
 <a name="getting-started"/>
 
-## Getting started
+### Getting started
 1. Install [Node.js](https://www.npmjs.com/get-npm).
 
     ```$ brew install node```
@@ -34,7 +34,7 @@ Enter a list and spin the wheel to get a random winner each time. 🔮
 
 <a name="tools"/>
 
-## Tools
+### Tools
 * React.js
 * HTML/CSS
 * [styled-components](https://styled-components.com): write CSS code to style React components
