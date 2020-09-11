@@ -16,20 +16,17 @@ Enter a list and spin the wheel to get a random winner each time.
 1. Install [Node.js](https://www.npmjs.com/get-npm).
 
     ```$ brew install node```
-2. Install...
 
-    ```$ npm install ...```
-    
-3. Clone this repo and cd into the directory.
-4. Install all dependencies.
+2. Clone this repo and cd into the directory.
+3. Install all dependencies.
 
     ```$ npm install```
 
-5. Start the development mode.
+4. Start the development mode.
 
     ```$ npm start```
     
-6. Open your browser and navigate to `http://localhost:3000/`.
+5. Open your browser and navigate to `http://localhost:3000/`.
 
 <a name="tools"/>
 
