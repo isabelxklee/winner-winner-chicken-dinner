@@ -18,25 +18,24 @@ Enter a list and spin the wheel to get a random winner each time.
     ```$ brew install node```
 2. Install...
 
-    ```$npm install ...```
+    ```$ npm install ...```
     
 3. Clone this repo and cd into the directory.
 4. Install all dependencies.
 
-    ```$npm install```
+    ```$ npm install```
 
 5. Start the development mode.
 
-    ```$npm start```
+    ```$ npm start```
     
-6. Open your browser and navigate to `http://localhost:3001/`.
+6. Open your browser and navigate to `http://localhost:3000/`.
 
 <a name="tools"/>
 
 ## Tools
 * React.js
-* Redux
 * HTML/CSS
-* [styled-components](https://styled-components.com)
+* [styled-components](https://styled-components.com): write CSS code to style React components
 * [Chance](https://chancejs.com/index.html): random object generator for JavaScript
 * [Netlify](https://www.netlify.com): front-end hosting service 
