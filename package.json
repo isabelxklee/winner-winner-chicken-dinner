@@ -35,8 +35,7 @@
     ]
   },
   "devDependencies": {
-    "json-server": "^0.16.1",
-    "redux-devtools": "^3.6.1"
+    "json-server": "^0.16.1"
   },
   "resolutions": {
     "styled-components": "^5"
