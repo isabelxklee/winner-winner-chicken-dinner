@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {withRouter } from 'react-router-dom'
- 
 import Wrapper from '../styled-components/Wrapper'
 import TextArea from '../styled-components/TextArea.jsx'
 import InputField from '../styled-components/InputField.jsx'
@@ -14,19 +13,10 @@ class EditListForm extends Component {
     people: localStorage.people
   }
 
-  formatStringToArr = (string) => { 
-    return string.replace( /[\r\n]+/gm, ", " ).split(", ")
-  }
-
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     })
-  }
-
-  deleteList = () => {
-    localStorage.clear()
-    this.props.history.push("/")
   }
 
   handleSubmit = (event) => {
@@ -34,6 +24,11 @@ class EditListForm extends Component {
     localStorage.setItem("title", this.state.title)
     localStorage.setItem("people", this.state.people)
     this.props.history.push("/list")
+  }
+
+  deleteList = () => {
+    localStorage.clear()
+    this.props.history.push("/")
   }
 
   render() {

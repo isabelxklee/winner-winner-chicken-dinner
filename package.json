@@ -16,7 +16,7 @@
     "styled-components": "^5.1.1"
   },
   "scripts": {
-    "start": "json-server --watch db.json -p 3001 & open http://localhost:3001/transactions & PORT=3000 react-scripts start && fg",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

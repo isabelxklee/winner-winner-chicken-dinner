@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {withRouter } from 'react-router-dom'
- 
 import Wrapper from '../styled-components/Wrapper'
 import Button from '../styled-components/Button.jsx'
 import LinkButton from '../styled-components/LinkButton.jsx'
@@ -12,14 +11,9 @@ class Generator extends Component {
     array: []
   }
 
-  // componentDidMount() {
-  //   fetch(this.props.localURL)
-  //   .then(r => r.json())
-  //   .then((listsArray) => {
-  //     this.props.setLists(listsArray)
-  //     this.formatLocalStorage()
-  //   })
-  // }
+  componentDidMount() {
+    this.formatLocalStorage()
+  }
 
   formatStringToArr = (string) => { 
     return string.replace( /[\r\n]+/gm, ", " ).split(", ")
@@ -45,10 +39,6 @@ class Generator extends Component {
     } else {
       console.log("this is the last number!")
     }
-  }
-
-  peopleLeft = () => {
-    
   }
 
   render() {

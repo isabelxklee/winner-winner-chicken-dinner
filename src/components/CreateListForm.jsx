@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {withRouter } from 'react-router-dom'
- 
 import TextArea from '../styled-components/TextArea.jsx'
 import InputField from '../styled-components/InputField.jsx'
 import Button from '../styled-components/Button.jsx'
@@ -14,10 +13,6 @@ class CreateListForm extends Component {
     people: []
   }
 
-  formatStringToArr = (string) => { 
-    return string.replace( /[\r\n]+/gm, ", " ).split(", ")
-  }
-
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
@@ -26,13 +21,8 @@ class CreateListForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    console.log(event)
-    this.props.setListDetails(event)
-    this.props.createList(event)
-    localStorage.setItem("id", event.id)
-    localStorage.setItem("title", event.title)
-    localStorage.setItem("people", event.people.join(", "))
-    console.log(localStorage)
+    localStorage.setItem("title", this.state.title)
+    localStorage.setItem("people", this.state.people)
     this.props.history.push("/list")
   }
 

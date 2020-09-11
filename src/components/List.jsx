@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {withRouter } from 'react-router-dom'
- 
 import Wrapper from '../styled-components/Wrapper'
 import LinkButton from '../styled-components/LinkButton.jsx'
 import Header from '../styled-components/Header.jsx'
@@ -24,7 +23,6 @@ class List extends Component {
       <>
         <Header>
           <LinkButton href="/" secondary>Home</LinkButton>
-          {/* <LinkButton href="/create-list" secondary>Create a new list</LinkButton> */}
         </Header>
 
         <Wrapper>
