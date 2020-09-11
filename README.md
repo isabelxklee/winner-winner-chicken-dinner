@@ -1,4 +1,4 @@
-Winner winner, chicken dinner! 🐓
+# Winner winner, chicken dinner! 🐓
 Enter a list and spin the wheel to get a random winner each time.
 
 ## Table of contents
