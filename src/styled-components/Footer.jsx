@@ -3,17 +3,11 @@ import styled from 'styled-components'
 const Footer = styled.div`
   background-color: black;
   color: white;
-  text-align: center;
+  text-align: left;
   overflow: hidden;
   bottom: 0;
-  width: 100%;
-  padding: 1em;
-
-  @media(max-width: 720px) {
-    background-color: black;
-    color: white;
-    padding: 1em;
-  }
+  padding: 2em;
+  margin: 0;
 `
 
 export default Footer

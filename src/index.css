@@ -83,6 +83,19 @@ div.lucky-duck {
   margin-bottom: 5em;
 }
 
+div.phantom {
+  display: block;
+  padding: 0;
+  height: 8em;
+  width: 100%;
+  overflow: hidden;
+}
+
+a.footer-link, a.footer-link:visited {
+  color: white;
+  margin-right: 3em;
+}
+
 @media(max-width: 720px) {
   h1 {
     font-size: 2.8em;
@@ -114,5 +127,9 @@ div.lucky-duck {
 
   div.lucky-duck {
     margin-bottom: 5em;
+  }
+
+  div.phantom {
+    height: 4em;
   }
 }

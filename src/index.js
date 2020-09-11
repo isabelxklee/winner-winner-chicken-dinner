@@ -17,7 +17,12 @@ ReactDOM.render(
         <Route exact path="/list"><List /></Route>
         <Route exact path="/edit-list"><EditListForm /></Route>
         <Route exact path="/spin-the-wheel"><Generator /></Route>
-        <Footer>hello world</Footer>
+        
+        <div className="phantom"></div>
+        <Footer>
+          <a href="https://github.com/isabelxklee/winner-winner-chicken-dinner" target="_blank" rel="noopener noreferrer" className="footer-link">GitHub</a>
+          <a href="https://www.kleetime.com" target="_blank" rel="noopener noreferrer" className="footer-link">Made by Isabel K. Lee</a>
+        </Footer>
       </div>
     </BrowserRouter>,
   document.getElementById('root')
