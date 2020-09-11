@@ -114,6 +114,12 @@ a.footer-link, a.footer-link:visited {
     font-size: 1em;
     margin: 0.6em 0.6em 0.6em 0em;
   }
+
+  a.footer-link, a.footer-link:visited {
+    color: white;
+    margin-bottom: 1em;
+    float: left;
+  }
   
   div.section {
     margin-top: 2em;
