@@ -1,42 +1,42 @@
-Winner winner, chicken dinner! 🐓
-========================
+# Winner winner, chicken dinner! 🐓
+Enter a list and spin the wheel to get a random winner each time. 🔮
 
-## Table of contents
+### Table of contents
 * [Features](#features)
 * [Getting started](#getting-started)
 * [Tools](#tools)
 
 <a name="features"/>
 
-## Features
+### Features
+* Enter a list of names or objects.
+* Edit and delete your list.
+* Always access your most recently created list with localStorage.
+* Spin the wheel to generate a random winner and see how many people or objects are left in the list. 
 
 <a name="getting-started"/>
 
-## Getting started
+### Getting started
 1. Install [Node.js](https://www.npmjs.com/get-npm).
 
     ```$ brew install node```
-2. Install...
 
-    ```$npm install ...```
+2. Clone this repo and cd into the directory.
+3. Install all dependencies.
+
+    ```$ npm install```
+
+4. Start the development mode.
+
+    ```$ npm start```
     
-3. Clone this repo and cd into the directory.
-4. Install all dependencies.
+5. Open your browser and navigate to `http://localhost:3000/`.
 
-    ```$npm install```
+<a name="tools"/>
 
-5. Start the development mode.
-
-    ```$npm start```
-    
-6. Open your browser and navigate to `http://localhost:3001/`.
-
-<a name="tech-stack"/>
-
-## Tech stack
+### Tools
 * React.js
-* Redux
 * HTML/CSS
-* [styled-components](https://styled-components.com)
+* [styled-components](https://styled-components.com): write CSS code to style React components
 * [Chance](https://chancejs.com/index.html): random object generator for JavaScript
 * [Netlify](https://www.netlify.com): front-end hosting service 
