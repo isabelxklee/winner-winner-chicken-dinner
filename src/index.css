@@ -85,6 +85,10 @@ div.lucky-duck {
     font-size: 2.8em;
   }
 
+  h1#lucky-duck {
+    font-size: 3.4em;
+  }
+
   h3 {
     margin-top: 0.4em;
     font-size: 1.4em;
@@ -103,5 +107,9 @@ div.lucky-duck {
     width: inherit;
     margin-top: 3em;
     padding: 2em;
+  }
+
+  div.lucky-duck {
+    margin-bottom: 5em;
   }
 }

@@ -48,7 +48,7 @@ class Generator extends Component {
     let peopleLeft = this.state.array.length - this.state.luckyIndex - 1
 
     return (
-      <Wrapper secondary>
+      <Wrapper primary>
         <div className="lucky-duck">
           <h3>Who's the lucky duck?</h3>
           <h1 id="lucky-duck">{this.state.array[this.state.luckyIndex]}</h1>
