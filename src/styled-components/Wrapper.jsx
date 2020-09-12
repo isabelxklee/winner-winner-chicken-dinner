@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   text-align: left;
 
   @media(max-width: 720px) {
-    padding: ${props => props.primary ? "12em 3em" : "4em 3em"};
+    padding: ${props => props.primary ? "12em 2em" : "4em 2em"};
   }
 `
 
