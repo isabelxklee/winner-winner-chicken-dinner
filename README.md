@@ -1,7 +1,7 @@
 # Winner winner, chicken dinner! 🐓
 Enter a list and spin the wheel to get a random winner each time. 🔮
 
-![screenshots of app](https://i.imgur.com/0kOYPoj.png)
+![screenshots of app](https://i.imgur.com/sVrM41S.png)
 
 ### Table of contents
 * [Features](#features)
@@ -14,7 +14,8 @@ Enter a list and spin the wheel to get a random winner each time. 🔮
 * Enter a list of names or objects.
 * Edit and delete your list.
 * Always access your most recently created list with localStorage.
-* Spin the wheel to generate a random winner and see how many people or objects are left in the list. 
+* Spin the wheel to generate a random winner and see how many people or objects are left in the list.
+* Fully mobile responsive!
 
 <a name="getting-started"/>
 
