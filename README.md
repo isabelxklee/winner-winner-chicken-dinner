@@ -1,7 +1,7 @@
 # Winner winner, chicken dinner! 🐓
 Enter a list and spin the wheel to get a random winner each time. 🔮
 
-![screenshots of app](https://i.imgur.com/xye2fpk.png)
+![screenshots of app](https://i.imgur.com/0kOYPoj.png)
 
 ### Table of contents
 * [Features](#features)
