@@ -2,17 +2,17 @@
   font-family: "GT Flexa Trial";
   font-weight: 700;
   src: local("GT Flexa Trial Expanded"),
-    url("./fonts/GT-Flexa-Expanded-Bold-Trial.woff2") format("woff2")
+    url("./fonts/GT-Flexa-Expanded-Bold-Trial.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "GT Flexa Trial";
   font-weight: 900;
   src: local("GT Flexa Trial Expanded"),
-    url("./fonts/GT-Flexa-Expanded-Black-Trial.woff2") format("woff2")
+    url("./fonts/GT-Flexa-Expanded-Black-Trial.woff2") format("woff2");
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
 
 body {
   font-family: "Roboto Mono", monospace;
@@ -83,20 +83,13 @@ div.lucky-duck {
   margin-bottom: 5em;
 }
 
-div.phantom {
-  display: block;
-  padding: 0;
-  height: 8em;
-  width: 100%;
-  overflow: hidden;
-}
-
-a.footer-link, a.footer-link:visited {
+a.footer-link,
+a.footer-link:visited {
   color: white;
-  margin-right: 3em;
+  margin-right: 32px;
 }
 
-@media(max-width: 720px) {
+@media (max-width: 720px) {
   h1 {
     font-size: 2.8em;
   }
@@ -115,12 +108,6 @@ a.footer-link, a.footer-link:visited {
     margin: 0.6em 0.6em 0.6em 0em;
   }
 
-  a.footer-link, a.footer-link:visited {
-    color: white;
-    margin-bottom: 1em;
-    float: left;
-  }
-  
   div.section {
     margin-top: 2em;
   }
