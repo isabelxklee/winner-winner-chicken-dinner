@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {Form, Field} from 'formik'
 
 export const Wrapper = styled.div`
   padding: 2rem 9rem 6rem 9rem;
@@ -24,20 +25,6 @@ export const HomeWrapper = styled(Wrapper)`
   padding: 0;
 `
 
-export const InputField = styled.input`
-  height: 3em;
-  width: 75%;
-  padding: 0em 1em;
-  border: 3px solid black;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1.2em;
-
-  @media (max-width: 720px) {
-    width: 80%;
-    margin-top: 1em;
-  }
-`
-
 export const TextArea = styled.textarea`
   height: 10em;
   width: 75%;
@@ -54,16 +41,16 @@ export const TextArea = styled.textarea`
 `
 
 export const Button = styled.button`
+  font-family: 'Roboto Mono', monospace;
   padding: 0.6em 1em;
   margin: 1em 1em 1em 0em;
   color: white;
   background-color: black;
   border: 1px solid black;
-  font-family: 'Roboto Mono', monospace;
   font-size: 1em;
   font-weight: 700;
   text-decoration: none;
-  opacity: ${(props) => (props.primary ? '1' : '0.4')};
+  width: fit-content;
   cursor: pointer;
 
   @media (max-width: 720px) {
@@ -91,4 +78,41 @@ export const LinkButton = styled.a`
     padding: ${(props) => (props.secondary ? '0em' : '0.6em 1em')};
     text-align: ${(props) => (props.secondary ? 'left' : 'center')};
   }
+`
+
+export const StyledForm = styled(Form)`
+  display: grid;
+  width: 75%;
+  text-align: left;
+
+  @media (max-width: 1000px) {
+    width: 75%;
+  }
+`
+
+export const StyledField = styled(Field)`
+  font-family: 'Roboto Mono', monospace;
+  height: 3em;
+  padding: 0em 1em;
+  border: 3px solid black;
+  font-size: 1.2em;
+  width: 100%;
+
+  @media (max-width: 720px) {
+    width: 80%;
+    margin-top: 1em;
+  }
+`
+
+export const Label = styled.label`
+  font-size: 28px;
+  margin: 10px 0;
+  @media only screen and (max-width: 1000px) {
+    font-size: 20px;
+    margin: 10px 0 0 0;
+  }
+`
+
+export const InputContainer = styled.div`
+  margin: 2rem 0;
 `

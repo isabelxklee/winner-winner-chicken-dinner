@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import Generator from './pages/Generator'
 import Footer from './components/Footer'
 import List from './pages/List'
-import EditList from './components/EditList'
+// import EditList from './components/EditList'
 import CreateList from './pages/CreateList'
 import './App.css'
 
@@ -20,9 +20,9 @@ const App = () => (
       <Route exact path="/list">
         <List />
       </Route>
-      <Route exact path="/edit-list">
+      {/* <Route exact path="/edit-list">
         <EditList />
-      </Route>
+      </Route> */}
       <Route exact path="/spin-the-wheel">
         <Generator />
       </Route>

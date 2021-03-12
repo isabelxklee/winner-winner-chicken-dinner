@@ -1,82 +1,66 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {withRouter} from 'react-router-dom'
-import {Wrapper, Button, InputField, TextArea, Header, LinkButton} from '../../styles'
+import * as Yup from 'yup'
+import {Formik} from 'formik'
+import {Wrapper, StyledForm, StyledField, Label, InputContainer, Button} from '../../styles'
 
-class CreateList extends Component {
-  state = {
-    title: '',
-    people: [],
+const CreateList = (props) => {
+  const handleSubmit = (values) => {
+    localStorage.setItem('title', values.title)
+    localStorage.setItem('list', values.list)
+    // props.history.push('/list')
+
+    console.log(localStorage)
   }
 
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    })
-  }
+  const formSchema = Yup.object().shape({
+    title: Yup.string().required('* Please enter your name.'),
+    list: Yup.string().required('* Please enter at least one list item.'),
+  })
 
-  handleSubmit = (event) => {
-    event.preventDefault()
-    localStorage.setItem('title', this.state.title)
-    localStorage.setItem('people', this.state.people)
-    this.props.history.push('/list')
-  }
-
-  render() {
-    return (
-      <>
-        <Header>
-          <LinkButton href="/" secondary>
-            Home
-          </LinkButton>
-        </Header>
-
-        <Wrapper secondary>
-          <form onSubmit={this.handleSubmit}>
-            <h1>Create your list</h1>
-
-            <div className="section">
-              <h3>List title</h3>
+  return (
+    <Formik
+      initialValues={{
+        title: '',
+        list: '',
+      }}
+      validationSchema={formSchema}
+      onSubmit={handleSubmit}
+    >
+      {({errors, touched}) => (
+        <Wrapper>
+          <h1>Create your list</h1>
+          <StyledForm>
+            <InputContainer>
+              <Label htmlFor="title">List title</Label>
               <p>
                 What's the purpose of this list? Is it for a stand down meeting? Or deciding who
                 gets to pet the cute dog next?
               </p>
-              <InputField
-                type="text"
-                name="title"
-                value={this.state.title}
-                onChange={this.handleChange}
-                autoComplete="off"
-              />
-            </div>
+              {touched.title && errors.title && <div>{errors.title}</div>}
+              <StyledField name="title" autoComplete="off" />
+            </InputContainer>
 
-            <div className="section">
-              <h3>Enter a list</h3>
+            <InputContainer>
+              <Label htmlFor="list">Enter a list</Label>
               <p>
                 Write all the items or names separated by a comma. For example, "apple, orange,
                 banana."
               </p>
-              <TextArea
-                name="people"
-                value={this.state.people}
-                onChange={this.handleChange}
-                autoComplete="off"
-              />
-            </div>
+              {touched.list && errors.list && <div>{errors.list}</div>}
+              <StyledField name="list" autoComplete="off" />
+            </InputContainer>
 
-            {this.state.people.length === 0 ? (
-              <Button type="submit" disabled>
-                Create list
-              </Button>
+            {errors.title || errors.list ? (
+              <Button type="submit">Create list</Button>
             ) : (
-              <Button type="submit" primary>
-                Create list
-              </Button>
+              <Button type="submit">Create list</Button>
             )}
-          </form>
+          </StyledForm>
         </Wrapper>
-      </>
-    )
-  }
+      )}
+    </Formik>
+  )
 }
 
 export default withRouter(CreateList)

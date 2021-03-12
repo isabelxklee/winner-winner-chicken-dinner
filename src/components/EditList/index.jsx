@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
-import {Wrapper, TextArea, InputField, Button, Header, LinkButton} from '../../styles'
+import {Wrapper, TextArea, Button, Header, LinkButton} from '../../styles'
 
 class EditList extends Component {
   state = {
@@ -48,7 +48,7 @@ class EditList extends Component {
                 What's the purpose of this list? Is it for a stand down meeting? Or deciding who
                 gets to pet the cute dog next?
               </p>
-              <InputField
+              <input
                 type="text"
                 name="title"
                 value={this.state.title}
