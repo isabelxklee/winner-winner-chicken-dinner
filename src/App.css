@@ -1,32 +1,3 @@
-@font-face {
-  font-family: 'GT Flexa Trial';
-  font-weight: 700;
-  src: local('GT Flexa Trial Expanded'),
-    url('./fonts/GT-Flexa-Expanded-Bold-Trial.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'GT Flexa Trial';
-  font-weight: 900;
-  src: local('GT Flexa Trial Expanded'),
-    url('./fonts/GT-Flexa-Expanded-Black-Trial.woff2') format('woff2');
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
-
-body {
-  font-family: 'Roboto Mono', monospace;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  word-wrap: break-word;
-  font-kerning: normal;
-  -moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  margin: 0;
-}
-
 h1 {
   font-family: 'GT Flexa Trial', sans-serif;
   font-weight: 900;

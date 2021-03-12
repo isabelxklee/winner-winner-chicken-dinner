@@ -1,5 +1,32 @@
-import styled from 'styled-components'
+import styled, {createGlobalStyle} from 'styled-components'
 import {Form, Field} from 'formik'
+import GTFlexa700 from './fonts/GT-Flexa-Expanded-Bold-Trial.woff2'
+import GTFlexa900 from './fonts/GT-Flexa-Expanded-Black-Trial.woff2'
+
+export const GlobalStyle = createGlobalStyle`
+@font-face {
+  font-family: 'GT Flexa Trial';
+  font-weight: 700;
+  src: local('GT Flexa Trial Expanded'),
+    url(${GTFlexa700});
+}
+
+@font-face {
+  font-family: 'GT Flexa Trial';
+  font-weight: 900;
+  src: local('GT Flexa Trial Expanded'),
+    url(${GTFlexa900}) format('woff2');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+}
+`
 
 export const Wrapper = styled.div`
   padding: 2rem 9rem 6rem 9rem;
