@@ -4,28 +4,28 @@ import GTFlexa700 from './fonts/GT-Flexa-Expanded-Bold-Trial.woff2'
 import GTFlexa900 from './fonts/GT-Flexa-Expanded-Black-Trial.woff2'
 
 export const GlobalStyle = createGlobalStyle`
-@font-face {
-  font-family: 'GT Flexa Trial';
-  font-weight: 700;
-  src: local('GT Flexa Trial Expanded'),
-    url(${GTFlexa700});
-}
+  @font-face {
+    font-family: 'GT Flexa Trial';
+    font-weight: 700;
+    src: local('GT Flexa Trial Expanded'),
+      url(${GTFlexa700});
+  }
 
-@font-face {
-  font-family: 'GT Flexa Trial';
-  font-weight: 900;
-  src: local('GT Flexa Trial Expanded'),
-    url(${GTFlexa900}) format('woff2');
-}
+  @font-face {
+    font-family: 'GT Flexa Trial';
+    font-weight: 900;
+    src: local('GT Flexa Trial Expanded'),
+      url(${GTFlexa900}) format('woff2');
+  }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto Mono', monospace;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizelegibility;
-}
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+  }
 `
 
 export const Wrapper = styled.div`
@@ -40,21 +40,6 @@ export const Wrapper = styled.div`
 
 export const HomeWrapper = styled(Wrapper)`
   padding: 0;
-`
-
-export const TextArea = styled.textarea`
-  height: 10em;
-  width: 75%;
-  padding: 1em 1em;
-  border: 3px solid black;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1.2em;
-
-  @media (max-width: 720px) {
-    width: 80%;
-    margin-top: 0.4em;
-    height: 8em;
-  }
 `
 
 export const Button = styled.button`
@@ -118,6 +103,15 @@ export const StyledField = styled(Field)`
   @media (max-width: 720px) {
     width: 80%;
     margin-top: 1em;
+  }
+`
+
+export const TextArea = styled(StyledField)`
+  height: 10em;
+  padding: 1em 1em;
+
+  @media (max-width: 720px) {
+    height: 8em;
   }
 `
 

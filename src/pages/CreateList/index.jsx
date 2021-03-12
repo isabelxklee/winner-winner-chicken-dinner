@@ -2,7 +2,7 @@ import React from 'react'
 import {withRouter} from 'react-router-dom'
 import * as Yup from 'yup'
 import {Formik} from 'formik'
-import {StyledForm, StyledField, Label, InputContainer, Button} from '../../styles'
+import {StyledForm, StyledField, TextArea, Label, InputContainer, Button} from '../../styles'
 
 const CreateList = (props) => {
   const handleSubmit = (values) => {
@@ -18,18 +18,23 @@ const CreateList = (props) => {
     list: Yup.string().required('* Please enter at least one list item.'),
   })
 
+  const deleteList = () => {
+    localStorage.clear()
+    props.history.push('/')
+  }
+
   return (
     <Formik
       initialValues={{
-        title: '',
-        list: '',
+        title: `${localStorage.title ? localStorage.title : ''}`,
+        list: `${localStorage.list ? localStorage.list : ''}`,
       }}
       validationSchema={formSchema}
       onSubmit={handleSubmit}
     >
       {({errors, touched}) => (
         <>
-          <h1>Create your list</h1>
+          <h1>{window.location.href.includes('create') ? 'Create your list' : 'Edit list'}</h1>
           <StyledForm>
             <InputContainer>
               <Label htmlFor="title">List title</Label>
@@ -44,18 +49,26 @@ const CreateList = (props) => {
             <InputContainer>
               <Label htmlFor="list">Enter a list</Label>
               <p>
-                Write all the items or names separated by a comma. For example, "apple, orange,
-                banana."
+                Write all the items or names separated by a comma or a line break. For example,
+                "apple, orange, banana."
               </p>
               {touched.list && errors.list && <div>{errors.list}</div>}
-              <StyledField name="list" autoComplete="off" />
+              <TextArea name="list" autoComplete="off" component="textarea" />
             </InputContainer>
 
             {errors.title || errors.list ? (
-              <Button type="submit">Create list</Button>
+              <Button type="submit">Save list</Button>
             ) : (
-              <Button type="submit">Create list</Button>
+              <Button type="submit">Save list</Button>
             )}
+
+            {window.location.href.includes('edit') ? (
+              <div className="danger">
+                <h3>Danger zone</h3>
+                <p>Deleting a list is permanent, so make sure you're making the right decision!</p>
+                <Button onClick={deleteList}>Delete list</Button>
+              </div>
+            ) : null}
           </StyledForm>
         </>
       )}

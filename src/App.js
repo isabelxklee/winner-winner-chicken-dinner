@@ -3,7 +3,6 @@ import {Switch, Route} from 'react-router-dom'
 import Home from './pages/Home'
 import SpinWheel from './pages/SpinWheel'
 import List from './pages/List'
-// import EditList from './components/EditList'
 import CreateList from './pages/CreateList'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -25,9 +24,9 @@ const App = () => (
         <Route exact path="/list">
           <List />
         </Route>
-        {/* <Route exact path="/edit-list">
-        <EditList />
-      </Route> */}
+        <Route exact path="/edit-list">
+          <CreateList />
+        </Route>
         <Route exact path="/spin-the-wheel">
           <SpinWheel />
         </Route>
