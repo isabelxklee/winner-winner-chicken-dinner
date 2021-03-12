@@ -116,3 +116,12 @@ export const Label = styled.label`
 export const InputContainer = styled.div`
   margin: 2rem 0;
 `
+
+export const LI = styled.ul`
+  text-indent: -1.7em;
+  font-size: 1.2em;
+
+  &:before {
+    content: '🌱 ';
+  }
+`
