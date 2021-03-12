@@ -8,7 +8,7 @@ const CreateList = (props) => {
   const handleSubmit = (values) => {
     localStorage.setItem('title', values.title)
     localStorage.setItem('list', values.list)
-    // props.history.push('/list')
+    props.history.push('/list')
 
     console.log(localStorage)
   }
