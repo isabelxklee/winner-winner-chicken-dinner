@@ -3,6 +3,7 @@ import {withRouter} from 'react-router-dom'
 import * as Yup from 'yup'
 import {Formik} from 'formik'
 import {StyledForm, StyledField, TextArea, Label, InputContainer, Button} from '../../styles'
+import {DangerZone} from './styles'
 
 const CreateList = (props) => {
   const handleSubmit = (values) => {
@@ -63,11 +64,11 @@ const CreateList = (props) => {
             )}
 
             {window.location.href.includes('edit') ? (
-              <div className="danger">
+              <DangerZone>
                 <h3>Danger zone</h3>
                 <p>Deleting a list is permanent, so make sure you're making the right decision!</p>
                 <Button onClick={deleteList}>Delete list</Button>
-              </div>
+              </DangerZone>
             ) : null}
           </StyledForm>
         </>

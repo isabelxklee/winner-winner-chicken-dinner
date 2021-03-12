@@ -29,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const Wrapper = styled.div`
-  padding: 2rem 9rem 6rem 9rem;
+  padding: 2rem 9rem 12rem 9rem;
   background: radial-gradient(#e3e73b, #fff 65%);
   text-align: left;
 
