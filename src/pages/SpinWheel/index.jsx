@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {withRouter} from 'react-router-dom'
-import {Wrapper, Button, LinkButton} from '../../styles'
+import {Button, LinkButton} from '../../styles'
 const chance = require('chance').Chance()
 
 const SpinWheel = () => {

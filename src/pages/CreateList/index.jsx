@@ -2,7 +2,7 @@ import React from 'react'
 import {withRouter} from 'react-router-dom'
 import * as Yup from 'yup'
 import {Formik} from 'formik'
-import {Wrapper, StyledForm, StyledField, Label, InputContainer, Button} from '../../styles'
+import {StyledForm, StyledField, Label, InputContainer, Button} from '../../styles'
 
 const CreateList = (props) => {
   const handleSubmit = (values) => {
