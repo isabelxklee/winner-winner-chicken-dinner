@@ -23,7 +23,7 @@ const SpinWheel = () => {
   }
 
   return (
-    <Wrapper>
+    <>
       <div className="lucky-duck">
         <h3>Who's the lucky duck?</h3>
         <h1 id="lucky-duck">{list[luckyIndex]}</h1>
@@ -42,7 +42,7 @@ const SpinWheel = () => {
           Next spin
         </Button>
       )}
-    </Wrapper>
+    </>
   )
 }
 

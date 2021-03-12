@@ -28,7 +28,7 @@ const CreateList = (props) => {
       onSubmit={handleSubmit}
     >
       {({errors, touched}) => (
-        <Wrapper>
+        <>
           <h1>Create your list</h1>
           <StyledForm>
             <InputContainer>
@@ -57,7 +57,7 @@ const CreateList = (props) => {
               <Button type="submit">Create list</Button>
             )}
           </StyledForm>
-        </Wrapper>
+        </>
       )}
     </Formik>
   )

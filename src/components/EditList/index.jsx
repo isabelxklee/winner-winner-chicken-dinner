@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
-import {Wrapper, TextArea, Button, Header, LinkButton} from '../../styles'
+import {Wrapper, TextArea, Button} from '../../styles'
 
 class EditList extends Component {
   state = {
@@ -29,15 +29,6 @@ class EditList extends Component {
   render() {
     return (
       <>
-        <Header>
-          <LinkButton href="/" secondary>
-            Home
-          </LinkButton>
-          <LinkButton href="/list" secondary>
-            Back to list
-          </LinkButton>
-        </Header>
-
         <Wrapper secondary>
           <form onSubmit={this.handleSubmit}>
             <h1>Edit your list</h1>
