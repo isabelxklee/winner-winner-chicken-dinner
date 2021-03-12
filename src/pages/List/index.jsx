@@ -1,6 +1,6 @@
 import React from 'react'
 import {withRouter} from 'react-router-dom'
-import {LinkButton, LI, UL} from '../../styles'
+import {InternalLink, LI, UL} from '../../styles'
 
 const List = () => {
   const formatStringToArr = (string) => string.replace(/[\r\n]+/gm, ', ').split(', ')
@@ -13,12 +13,8 @@ const List = () => {
           <LI key={index}>{item}</LI>
         ))}
       </UL>
-      <LinkButton primary href="/edit-list">
-        Edit list
-      </LinkButton>
-      <LinkButton primary href="/spin-the-wheel">
-        Spin the wheel
-      </LinkButton>
+      <InternalLink to="/edit-list">Edit list</InternalLink>
+      <InternalLink to="/spin-the-wheel">Spin the wheel</InternalLink>
     </>
   )
 }

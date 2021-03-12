@@ -1,24 +1,25 @@
 import React from 'react'
 import {FooterContainer} from './styles'
+import {FooterLink} from '../../styles'
 
 const Footer = () => (
   <FooterContainer>
-    <a
+    <FooterLink
       href="https://github.com/isabelxklee/winner-winner-chicken-dinner"
       target="_blank"
       rel="noopener noreferrer"
       className="footer-link"
     >
       GitHub
-    </a>
-    <a
+    </FooterLink>
+    <FooterLink
       href="https://www.kleetime.com"
       target="_blank"
       rel="noopener noreferrer"
       className="footer-link"
     >
       Made by Isabel K. Lee
-    </a>
+    </FooterLink>
   </FooterContainer>
 )
 

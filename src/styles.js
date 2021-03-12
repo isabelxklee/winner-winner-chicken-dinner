@@ -1,5 +1,6 @@
 import styled, {createGlobalStyle} from 'styled-components'
 import {Form, Field} from 'formik'
+import {NavLink} from 'react-router-dom'
 import GTFlexa700 from './fonts/GT-Flexa-Expanded-Bold-Trial.woff2'
 import GTFlexa900 from './fonts/GT-Flexa-Expanded-Black-Trial.woff2'
 
@@ -61,33 +62,15 @@ export const Button = styled.button`
   }
 `
 
-export const NavLink = styled.a`
+export const InternalLink = styled(NavLink)`
   color: #000;
-  background-color: #fff;
   text-decoration: underline;
   border: none;
   margin-right: 32px;
 `
 
-export const LinkButton = styled.a`
-  padding: 0.6em 1em;
-  margin: 1em 1em 1em 0em;
-  color: ${(props) => (props.secondary ? 'black' : 'white')};
-  background-color: ${(props) => (props.secondary ? 'none' : 'black')};
-  border: ${(props) => (props.secondary ? 'none' : '1px solid black')};
-  font-family: 'Roboto Mono', monospace;
-  font-size: ${(props) => (props.secondary ? '1.2em' : '1em')};
-  font-weight: 700;
-  text-decoration: ${(props) => (props.secondary ? 'underline' : 'none')};
-  display: inline-block;
-  text-align: center;
-
-  @media (max-width: 720px) {
-    width: 80%;
-    margin: 0.6em 0em;
-    padding: ${(props) => (props.secondary ? '0em' : '0.6em 1em')};
-    text-align: ${(props) => (props.secondary ? 'left' : 'center')};
-  }
+export const FooterLink = styled.a`
+  color: #fff;
 `
 
 export const StyledForm = styled(Form)`
