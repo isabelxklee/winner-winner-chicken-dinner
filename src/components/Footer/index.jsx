@@ -1,5 +1,5 @@
-import React from "react";
-import { FooterContainer } from "./styles";
+import React from 'react'
+import {FooterContainer} from './styles'
 
 const Footer = () => (
   <FooterContainer>
@@ -20,6 +20,6 @@ const Footer = () => (
       Made by Isabel K. Lee
     </a>
   </FooterContainer>
-);
+)
 
-export default Footer;
+export default Footer

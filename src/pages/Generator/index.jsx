@@ -1,46 +1,44 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-import Wrapper from "../styled-components/Wrapper";
-import Button from "../styled-components/Button.jsx";
-import LinkButton from "../styled-components/LinkButton.jsx";
-const chance = require("chance").Chance();
+import React, {Component} from 'react'
+import {withRouter} from 'react-router-dom'
+import {Wrapper, Button, LinkButton} from '../../styles'
+const chance = require('chance').Chance()
 
 class Generator extends Component {
   state = {
     luckyIndex: 0,
     array: [],
-  };
+  }
 
   componentDidMount() {
-    this.formatLocalStorage();
+    this.formatLocalStorage()
   }
 
   formatStringToArr = (string) => {
-    return string.replace(/[\r\n]+/gm, ", ").split(", ");
-  };
+    return string.replace(/[\r\n]+/gm, ', ').split(', ')
+  }
 
   formatLocalStorage = () => {
-    let peopleArray = this.formatStringToArr(localStorage.people);
-    peopleArray = chance.shuffle(peopleArray);
-    localStorage.setItem("people", peopleArray.join(", "));
+    let peopleArray = this.formatStringToArr(localStorage.people)
+    peopleArray = chance.shuffle(peopleArray)
+    localStorage.setItem('people', peopleArray.join(', '))
 
     this.setState({
       array: peopleArray,
-    });
-  };
+    })
+  }
 
   handleChange = () => {
-    let arrLength = this.state.array.length;
+    let arrLength = this.state.array.length
 
     if (this.state.luckyIndex < arrLength) {
       this.setState({
         luckyIndex: this.state.luckyIndex + 1,
-      });
+      })
     }
-  };
+  }
 
   render() {
-    let peopleLeft = this.state.array.length - this.state.luckyIndex - 1;
+    let peopleLeft = this.state.array.length - this.state.luckyIndex - 1
 
     return (
       <Wrapper primary>
@@ -69,8 +67,8 @@ class Generator extends Component {
           </Button>
         )}
       </Wrapper>
-    );
+    )
   }
 }
 
-export default withRouter(Generator);
+export default withRouter(Generator)

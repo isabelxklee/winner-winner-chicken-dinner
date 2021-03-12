@@ -1,12 +1,12 @@
-import React from "react";
-import { Switch, Route } from "react-router-dom";
-import Home from "./components/Home";
-import Footer from "./components/Footer";
-import List from "./components/List";
-import EditListForm from "./components/EditListForm";
-import Generator from "./components/Generator";
-import CreateListForm from "./components/CreateListForm";
-import "./App.css";
+import React from 'react'
+import {Switch, Route} from 'react-router-dom'
+import Home from './pages/Home'
+import Generator from './pages/Generator'
+import Footer from './components/Footer'
+import List from './pages/List'
+import EditList from './components/EditList'
+import CreateList from './pages/CreateList'
+import './App.css'
 
 const App = () => (
   <>
@@ -15,13 +15,13 @@ const App = () => (
         <Home />
       </Route>
       <Route exact path="/create-list">
-        <CreateListForm />
+        <CreateList />
       </Route>
       <Route exact path="/list">
         <List />
       </Route>
       <Route exact path="/edit-list">
-        <EditListForm />
+        <EditList />
       </Route>
       <Route exact path="/spin-the-wheel">
         <Generator />
@@ -29,5 +29,5 @@ const App = () => (
     </Switch>
     <Footer />
   </>
-);
-export default App;
+)
+export default App

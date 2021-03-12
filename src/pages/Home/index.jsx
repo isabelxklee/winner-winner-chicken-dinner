@@ -1,6 +1,5 @@
 import React from 'react'
-import {Wrapper} from '../../styles'
-import LinkButton from '../styled-components/LinkButton.jsx'
+import {Wrapper, LinkButton} from '../../styles'
 
 const Home = () => (
   <Wrapper primary>
