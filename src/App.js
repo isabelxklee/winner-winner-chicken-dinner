@@ -1,7 +1,7 @@
 import React from 'react'
 import {Switch, Route} from 'react-router-dom'
 import Home from './pages/Home'
-import Generator from './pages/Generator'
+import SpinWheel from './pages/SpinWheel'
 import Footer from './components/Footer'
 import List from './pages/List'
 // import EditList from './components/EditList'
@@ -24,7 +24,7 @@ const App = () => (
         <EditList />
       </Route> */}
       <Route exact path="/spin-the-wheel">
-        <Generator />
+        <SpinWheel />
       </Route>
     </Switch>
     <Footer />

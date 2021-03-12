@@ -117,11 +117,16 @@ export const InputContainer = styled.div`
   margin: 2rem 0;
 `
 
-export const LI = styled.ul`
+export const LI = styled.li`
   text-indent: -1.7em;
   font-size: 1.2em;
 
   &:before {
     content: '🌱 ';
   }
+`
+
+export const UL = styled.ul`
+  margin-bottom: 3em;
+  list-style: none;
 `
