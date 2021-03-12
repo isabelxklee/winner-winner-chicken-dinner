@@ -29,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const Wrapper = styled.div`
-  padding: 2rem 9rem 12rem 9rem;
+  padding: 4rem 9rem 12rem 9rem;
   background: radial-gradient(#e3e73b, #fff 65%);
   text-align: left;
 
@@ -38,8 +38,8 @@ export const Wrapper = styled.div`
   }
 `
 
-export const HomeWrapper = styled(Wrapper)`
-  padding: 0;
+export const P = styled.p`
+  font-size: 1rem;
 `
 
 export const Button = styled.button`
@@ -59,6 +59,14 @@ export const Button = styled.button`
     width: 96%;
     margin: 0.6em 0em;
   }
+`
+
+export const NavLink = styled.a`
+  color: #000;
+  background-color: #fff;
+  text-decoration: underline;
+  border: none;
+  margin-right: 32px;
 `
 
 export const LinkButton = styled.a`

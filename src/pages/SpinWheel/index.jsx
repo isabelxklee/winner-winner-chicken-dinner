@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {withRouter} from 'react-router-dom'
-import {Button, LinkButton} from '../../styles'
+import {Button, LinkButton, P} from '../../styles'
 const chance = require('chance').Chance()
 
 const SpinWheel = () => {
@@ -29,9 +29,9 @@ const SpinWheel = () => {
         <h1 id="lucky-duck">{list[luckyIndex]}</h1>
       </div>
 
-      <p>
+      <P>
         Progress: {luckyIndex + 1} / {list.length}
-      </p>
+      </P>
 
       {luckyIndex === list.length - 1 ? (
         <LinkButton href="/list" primary>

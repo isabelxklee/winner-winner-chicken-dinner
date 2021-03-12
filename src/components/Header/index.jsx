@@ -1,15 +1,15 @@
 import React from 'react'
 import {Container} from './styles'
-import {LinkButton} from '../../styles'
+import {NavLink} from '../../styles'
 
 const Header = () => (
   <Container>
-    <LinkButton href="/" secondary>
+    <NavLink href="/" secondary>
       Home
-    </LinkButton>
-    <LinkButton href="/list" secondary>
+    </NavLink>
+    <NavLink href="/list" secondary>
       Back to list
-    </LinkButton>
+    </NavLink>
   </Container>
 )
 

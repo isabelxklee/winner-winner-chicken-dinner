@@ -1,10 +1,10 @@
 import React from 'react'
-import {LinkButton} from '../../styles'
+import {LinkButton, P} from '../../styles'
 
 const Home = () => (
   <>
     <h1>Winner winner, chicken dinner!</h1>
-    <p>Enter a list and spin the wheel to get a random winner each time. Ready to get started?</p>
+    <P>Enter a list and spin the wheel to get a random winner each time. Ready to get started?</P>
 
     <div className="section">
       <LinkButton href="/create-list" primary>

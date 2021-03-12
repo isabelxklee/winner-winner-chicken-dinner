@@ -2,7 +2,7 @@ import React from 'react'
 import {withRouter} from 'react-router-dom'
 import * as Yup from 'yup'
 import {Formik} from 'formik'
-import {StyledForm, StyledField, TextArea, Label, InputContainer, Button} from '../../styles'
+import {StyledForm, StyledField, TextArea, Label, InputContainer, Button, P} from '../../styles'
 import {DangerZone} from './styles'
 
 const CreateList = (props) => {
@@ -39,20 +39,20 @@ const CreateList = (props) => {
           <StyledForm>
             <InputContainer>
               <Label htmlFor="title">List title</Label>
-              <p>
+              <P>
                 What's the purpose of this list? Is it for a stand down meeting? Or deciding who
                 gets to pet the cute dog next?
-              </p>
+              </P>
               {touched.title && errors.title && <div>{errors.title}</div>}
               <StyledField name="title" autoComplete="off" />
             </InputContainer>
 
             <InputContainer>
               <Label htmlFor="list">Enter a list</Label>
-              <p>
+              <P>
                 Write all the items or names separated by a comma or a line break. For example,
                 "apple, orange, banana."
-              </p>
+              </P>
               {touched.list && errors.list && <div>{errors.list}</div>}
               <TextArea name="list" autoComplete="off" component="textarea" />
             </InputContainer>
@@ -66,7 +66,7 @@ const CreateList = (props) => {
             {window.location.href.includes('edit') ? (
               <DangerZone>
                 <h3>Danger zone</h3>
-                <p>Deleting a list is permanent, so make sure you're making the right decision!</p>
+                <P>Deleting a list is permanent, so make sure you're making the right decision!</P>
                 <Button onClick={deleteList}>Delete list</Button>
               </DangerZone>
             ) : null}
