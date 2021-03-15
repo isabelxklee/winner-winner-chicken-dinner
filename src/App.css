@@ -15,12 +15,6 @@ div.section {
   margin-top: 4em;
 }
 
-a.footer-link,
-a.footer-link:visited {
-  color: white;
-  margin-right: 32px;
-}
-
 @media (max-width: 720px) {
   h1 {
     font-size: 2.8em;

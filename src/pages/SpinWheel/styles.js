@@ -11,10 +11,11 @@ export const Wrapper = styled.div`
 export const Title = styled.h2`
   font-family: 'GT Flexa Trial', sans-serif;
   font-weight: 900;
-  font-size: 6rem;
+  font-size: 72px;
+  word-break: break-word;
 
   @media (max-width: 720px) {
-    font-size: 3.4rem;
+    font-size: 42px;
   }
 `
 
