@@ -23,6 +23,10 @@ const SpinWheel = () => {
     console.log(luckyIndex)
   }
 
+  const calculateWidth = () => (
+    (luckyIndex + 1) / list.length
+  )
+
   return (
     <Wrapper>
       <Container>
@@ -31,7 +35,7 @@ const SpinWheel = () => {
       </Container>
 
       <ProgressContainer>
-        <progress max="100" value="40" />
+        <progress max="100" value={calculateWidth() * 100} />
       </ProgressContainer>
 
       {luckyIndex === list.length - 1 ? (
