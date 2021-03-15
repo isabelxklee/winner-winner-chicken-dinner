@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const FooterContainer = styled.div`
   background-color: black;
@@ -9,4 +9,9 @@ export const FooterContainer = styled.div`
   padding: 2em;
   margin: 0;
   width: 100vw;
-`;
+`
+
+export const ExternalLink = styled.a`
+  color: #fff;
+  margin-right: 32px;
+`

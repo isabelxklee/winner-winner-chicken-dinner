@@ -69,10 +69,6 @@ export const InternalLink = styled(NavLink)`
   margin-right: 32px;
 `
 
-export const FooterLink = styled.a`
-  color: #fff;
-`
-
 export const StyledForm = styled(Form)`
   display: grid;
   width: 75%;

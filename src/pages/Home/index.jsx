@@ -3,7 +3,10 @@ import {InternalLink, P} from '../../styles'
 
 const Home = () => (
   <>
-    <h1>Winner winner, chicken dinner!</h1>
+    <h1>
+      Winner winner, <br />
+      chicken dinner!
+    </h1>
     <P>Enter a list and spin the wheel to get a random winner each time. Ready to get started?</P>
 
     <div className="section">

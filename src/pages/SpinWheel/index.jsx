@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {withRouter} from 'react-router-dom'
 import {Button, InternalLink, P} from '../../styles'
+import {Container, Wrapper} from './styles'
 const chance = require('chance').Chance()
 
 const SpinWheel = () => {
@@ -23,11 +24,11 @@ const SpinWheel = () => {
   }
 
   return (
-    <>
-      <div className="lucky-duck">
+    <Wrapper>
+      <Container>
         <h3>Who's the lucky duck?</h3>
         <h1 id="lucky-duck">{list[luckyIndex]}</h1>
-      </div>
+      </Container>
 
       <P>
         Progress: {luckyIndex + 1} / {list.length}
@@ -40,7 +41,7 @@ const SpinWheel = () => {
           Next spin
         </Button>
       )}
-    </>
+    </Wrapper>
   )
 }
 
