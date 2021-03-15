@@ -42,6 +42,10 @@ export const Wrapper = styled.div`
 export const H3 = styled.h3`
   font-size: 24px;
   font-weight: 400;
+
+  @media (max-width: 720px) {
+    font-size: 20px;
+  }
 `
 
 export const P = styled.p`

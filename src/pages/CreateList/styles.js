@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const DangerZone = styled.div`
   background-color: rgb(208, 48, 0);
   padding: 3em;
-  width: 70%;
+  width: 90%;
   color: white;
   margin-top: 4rem;
 

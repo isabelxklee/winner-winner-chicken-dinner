@@ -2,7 +2,7 @@ import React from 'react'
 import {withRouter} from 'react-router-dom'
 import * as Yup from 'yup'
 import {Formik} from 'formik'
-import {StyledForm, StyledField, TextArea, Label, InputContainer, Button, P} from '../../styles'
+import {StyledForm, StyledField, TextArea, Label, InputContainer, Button, H3, P} from '../../styles'
 import {DangerZone} from './styles'
 
 const CreateList = (props) => {
@@ -65,7 +65,7 @@ const CreateList = (props) => {
 
             {window.location.href.includes('edit') ? (
               <DangerZone>
-                <h3>Danger zone</h3>
+                <H3>Danger zone</H3>
                 <P>Deleting a list is permanent, so make sure you're making the right decision!</P>
                 <Button onClick={deleteList}>Delete list</Button>
               </DangerZone>
