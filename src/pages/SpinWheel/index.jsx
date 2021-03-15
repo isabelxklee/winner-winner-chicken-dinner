@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {withRouter} from 'react-router-dom'
-import {Button, InternalLink} from '../../styles'
+import {Button, SecondaryInternalLink} from '../../styles'
 import {Container, Wrapper, Title, ProgressContainer} from './styles'
 const chance = require('chance').Chance()
 
@@ -23,9 +23,7 @@ const SpinWheel = () => {
     console.log(luckyIndex)
   }
 
-  const calculateWidth = () => (
-    (luckyIndex + 1) / list.length
-  )
+  const calculateWidth = () => (luckyIndex + 1) / list.length
 
   return (
     <Wrapper>
@@ -39,7 +37,7 @@ const SpinWheel = () => {
       </ProgressContainer>
 
       {luckyIndex === list.length - 1 ? (
-        <InternalLink to="/list">Back to list</InternalLink>
+        <SecondaryInternalLink to="/list">Back to list</SecondaryInternalLink>
       ) : (
         <Button onClick={handleClick} primary>
           Next spin

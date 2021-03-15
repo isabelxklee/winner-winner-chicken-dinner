@@ -26,7 +26,7 @@ export const ProgressContainer = styled.div`
   }
 
   progress[value]::-webkit-progress-bar {
-    background: #fff;
+    background: transparent;
   }
 
   progress[value]::-webkit-progress-value {

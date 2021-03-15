@@ -69,6 +69,21 @@ export const InternalLink = styled(NavLink)`
   margin-right: 32px;
 `
 
+export const SecondaryInternalLink = styled(InternalLink)`
+  font-family: 'Roboto Mono', monospace;
+  padding: 0.6em 1em;
+  color: white;
+  background-color: black;
+  border: 1px solid black;
+  font-size: 1em;
+  font-weight: 700;
+  text-decoration: none;
+  width: fit-content;
+  cursor: pointer;
+  display: block;
+  margin: 1em auto;
+`
+
 export const StyledForm = styled(Form)`
   display: grid;
   width: 75%;
