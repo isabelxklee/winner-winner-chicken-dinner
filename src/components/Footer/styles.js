@@ -14,4 +14,5 @@ export const FooterContainer = styled.div`
 export const ExternalLink = styled.a`
   color: #fff;
   margin-right: 32px;
+  font-weight: 600;
 `

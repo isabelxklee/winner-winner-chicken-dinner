@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {withRouter} from 'react-router-dom'
-import {Button, SecondaryInternalLink} from '../../styles'
-import {Container, Wrapper, Title, ProgressContainer} from './styles'
+import {Button, SecondaryInternalLink, H3, P} from '../../styles'
+import {Container, Wrapper, Title, ProgressContainer, SuccessMessage} from './styles'
 const chance = require('chance').Chance()
 
 const SpinWheel = () => {
@@ -28,7 +28,7 @@ const SpinWheel = () => {
   return (
     <Wrapper>
       <Container>
-        <h3>Who's the lucky duck?</h3>
+        <H3>Who's the lucky duck?</H3>
         <Title>{list[luckyIndex]}</Title>
       </Container>
 
@@ -37,7 +37,10 @@ const SpinWheel = () => {
       </ProgressContainer>
 
       {luckyIndex === list.length - 1 ? (
-        <SecondaryInternalLink to="/list">Back to list</SecondaryInternalLink>
+        <SuccessMessage>
+          <P>Hurrah! You've reached the last item.</P>
+          <SecondaryInternalLink to="/list">Back to list</SecondaryInternalLink>
+        </SuccessMessage>
       ) : (
         <Button onClick={handleClick} primary>
           Next spin

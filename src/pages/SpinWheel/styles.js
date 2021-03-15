@@ -33,3 +33,7 @@ export const ProgressContainer = styled.div`
     background: #000;
   }
 `
+
+export const SuccessMessage = styled.div`
+  margin-top: 32px;
+`

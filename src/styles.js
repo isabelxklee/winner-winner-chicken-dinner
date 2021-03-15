@@ -39,8 +39,13 @@ export const Wrapper = styled.div`
   }
 `
 
+export const H3 = styled.h3`
+  font-size: 24px;
+  font-weight: 400;
+`
+
 export const P = styled.p`
-  font-size: 1rem;
+  font-size: 16px;
 `
 
 export const Button = styled.button`
@@ -67,6 +72,7 @@ export const InternalLink = styled(NavLink)`
   text-decoration: underline;
   border: none;
   margin-right: 32px;
+  font-weight: 600;
 `
 
 export const SecondaryInternalLink = styled(InternalLink)`
