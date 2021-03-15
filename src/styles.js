@@ -37,12 +37,16 @@ export const Wrapper = styled.div`
   min-height: 100%;
 
   @media (max-width: 720px) {
-    padding: 4em 2em;
+    padding: 2em;
   }
 `
 
 export const FooterPadding = styled.div`
   padding-bottom: 48px;
+
+  @media (max-width: 720px) {
+    padding: 100px;
+  }
 `
 
 export const H3 = styled.h3`
@@ -83,6 +87,10 @@ export const InternalLink = styled(NavLink)`
   border: none;
   margin-right: 32px;
   font-weight: 600;
+
+  @media (max-width: 720px) {
+    font-size: 16px;
+  }
 `
 
 export const SecondaryInternalLink = styled(InternalLink)`

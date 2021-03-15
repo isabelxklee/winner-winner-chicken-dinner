@@ -6,6 +6,8 @@ export const Container = styled.nav`
   top: 0;
 
   @media (max-width: 720px) {
-    padding: 2em 1em 0em 1em;
+    text-align: left;
+    display: block;
+    padding: 2rem;
   }
 `
