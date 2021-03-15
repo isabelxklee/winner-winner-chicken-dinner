@@ -33,10 +33,16 @@ export const Wrapper = styled.div`
   padding: 4rem 9rem 12rem 9rem;
   background: radial-gradient(#e3e73b, #fff 65%);
   text-align: left;
+  position: relative;
+  min-height: 100%;
 
   @media (max-width: 720px) {
     padding: 4em 2em;
   }
+`
+
+export const FooterPadding = styled.div`
+  padding-bottom: 48px;
 `
 
 export const H3 = styled.h3`

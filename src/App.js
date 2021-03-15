@@ -6,7 +6,7 @@ import List from './pages/List'
 import CreateList from './pages/CreateList'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import {GlobalStyle, Wrapper} from './styles'
+import {GlobalStyle, Wrapper, FooterPadding} from './styles'
 import './App.css'
 
 const App = () => (
@@ -31,8 +31,9 @@ const App = () => (
           <SpinWheel />
         </Route>
       </Switch>
+      <FooterPadding />
+      <Footer />
     </Wrapper>
-    <Footer />
   </>
 )
 export default App
