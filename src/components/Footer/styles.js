@@ -1,18 +1,16 @@
 import styled from 'styled-components'
 
 export const FooterContainer = styled.div`
-  background-color: black;
-  color: white;
-  text-align: left;
-  height: 48px;
-  margin: 0;
-  position: absolute;
-  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 24px 0;
+  margin-top: 40px;
+  position: relative;
+  width: 100vw;
   align-items: center;
   justify-content: center;
   display: flex;
   bottom: 0;
-  left: 0;
 `
 
 export const ExternalLink = styled.a`

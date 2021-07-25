@@ -41,14 +41,6 @@ export const Wrapper = styled.div`
   }
 `
 
-export const FooterPadding = styled.div`
-  padding-bottom: 48px;
-
-  @media (max-width: 720px) {
-    padding: 100px;
-  }
-`
-
 export const H3 = styled.h3`
   font-size: 24px;
   font-weight: 400;
