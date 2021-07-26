@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.nav`
-  padding: 3em;
+  padding: 48px;
   text-align: center;
   top: 0;
 
