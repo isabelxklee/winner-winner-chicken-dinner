@@ -36,33 +36,35 @@ const CreateList = (props) => {
           <h1>{window.location.href.includes('create') ? 'Create your list' : 'Edit list'}</h1>
           <StyledForm>
             <InputContainer>
-              <Label htmlFor="title">List title</Label>
+              <Label>List title
               <P>
                 Write the purpose of this list. Is it for a stand up meeting? Or deciding who gets to buy the next round of drinks?
               </P>
               {touched.title && errors.title && <Error>{errors.title}</Error>}
               <StyledField name="title" autoComplete="off" />
+              </Label>
             </InputContainer>
 
             <InputContainer>
-              <Label htmlFor="list">Enter a list</Label>
+              <Label>Enter a list
               <P>
                 Write all your list items separated by a comma or a line break. For example,
                 "apple, orange, banana."
               </P>
               {touched.list && errors.list && <Error>{errors.list}</Error>}
               <TextArea name="list" autoComplete="off" component="textarea" />
+              </Label>
             </InputContainer>
             
             <Button type="submit" disabled={errors.title || errors.list}>Save list</Button>
 
-            {window.location.href.includes('edit') ? (
+            {window.location.href.includes('edit') && 
               <DangerZone>
                 <H3>Danger zone</H3>
                 <P>Deleting a list is permanent, so make sure you're making the right decision!</P>
                 <Button onClick={deleteList}>Delete list</Button>
               </DangerZone>
-            ) : null}
+            }
           </StyledForm>
         </>
       )}

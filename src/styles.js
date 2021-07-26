@@ -115,7 +115,7 @@ export const StyledField = styled(Field)`
   height: 3em;
   padding: 0em 1em;
   border: 3px solid black;
-  font-size: 1.2em;
+  font-size: 16px;
   width: 100%;
 
   @media (max-width: 720px) {
@@ -127,6 +127,7 @@ export const StyledField = styled(Field)`
 export const TextArea = styled(StyledField)`
   height: 10em;
   padding: 1em 1em;
+  font-size: 16px;
 
   @media (max-width: 720px) {
     height: 8em;
@@ -136,6 +137,7 @@ export const TextArea = styled(StyledField)`
 export const Label = styled.label`
   font-size: 28px;
   margin: 10px 0;
+
   @media only screen and (max-width: 1000px) {
     font-size: 20px;
     margin: 10px 0 0 0;

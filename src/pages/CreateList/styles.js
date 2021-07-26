@@ -17,4 +17,5 @@ export const DangerZone = styled.div`
 export const Error = styled.div`
   margin-bottom: 16px;
   color: #D03000;
+  font-size: 16px;
 `
