@@ -21,11 +21,11 @@ Enter a list and spin the wheel to get a random winner each time. 🔮
 2. Clone this repo and cd into the directory.
 3. Install all dependencies.
 
-   `$ npm install`
+   `$ yarn install`
 
 4. Start the development mode.
 
-   `$ npm start`
+   `$ yarn start`
 
 5. Open your browser and navigate to `http://localhost:3000/`.
 
