@@ -30,14 +30,13 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const Wrapper = styled.div`
-  padding: 4rem 9rem 12rem 9rem;
+  padding: 64px 200px;
   background: radial-gradient(#e3e73b, #fff 65%);
   text-align: left;
   position: relative;
-  min-height: 100%;
 
   @media (max-width: 720px) {
-    padding: 2em;
+    padding: 48px;
   }
 `
 
