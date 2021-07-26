@@ -107,7 +107,7 @@ export const StyledForm = styled(Form)`
   text-align: left;
 
   @media (max-width: 1000px) {
-    width: 75%;
+    width: 100%;
   }
 `
 
