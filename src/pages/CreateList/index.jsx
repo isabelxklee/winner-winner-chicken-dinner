@@ -3,19 +3,17 @@ import {withRouter} from 'react-router-dom'
 import * as Yup from 'yup'
 import {Formik} from 'formik'
 import {StyledForm, StyledField, TextArea, Label, InputContainer, Button, H3, P} from '../../styles'
-import {DangerZone} from './styles'
+import {DangerZone, Error} from './styles'
 
 const CreateList = (props) => {
   const handleSubmit = (values) => {
     localStorage.setItem('title', values.title)
     localStorage.setItem('list', values.list)
     props.history.push('/list')
-
-    console.log(localStorage)
   }
 
   const formSchema = Yup.object().shape({
-    title: Yup.string().required('* Please enter your name.'),
+    title: Yup.string().required('* Please enter a list name.'),
     list: Yup.string().required('* Please enter at least one list item.'),
   })
 
@@ -38,38 +36,35 @@ const CreateList = (props) => {
           <h1>{window.location.href.includes('create') ? 'Create your list' : 'Edit list'}</h1>
           <StyledForm>
             <InputContainer>
-              <Label htmlFor="title">List title</Label>
+              <Label>List title
               <P>
-                What's the purpose of this list? Is it for a stand down meeting? Or deciding who
-                gets to pet the cute dog next?
+                Write the purpose of this list. Is it for a stand up meeting? Or deciding who gets to buy the next round of drinks?
               </P>
-              {touched.title && errors.title && <div>{errors.title}</div>}
+              {touched.title && errors.title && <Error>{errors.title}</Error>}
               <StyledField name="title" autoComplete="off" />
+              </Label>
             </InputContainer>
 
             <InputContainer>
-              <Label htmlFor="list">Enter a list</Label>
+              <Label>Enter a list
               <P>
-                Write all the items or names separated by a comma or a line break. For example,
+                Write all your list items separated by a comma or a line break. For example,
                 "apple, orange, banana."
               </P>
-              {touched.list && errors.list && <div>{errors.list}</div>}
+              {touched.list && errors.list && <Error>{errors.list}</Error>}
               <TextArea name="list" autoComplete="off" component="textarea" />
+              </Label>
             </InputContainer>
+            
+            <Button type="submit" disabled={errors.title || errors.list}>Save list</Button>
 
-            {errors.title || errors.list ? (
-              <Button type="submit">Save list</Button>
-            ) : (
-              <Button type="submit">Save list</Button>
-            )}
-
-            {window.location.href.includes('edit') ? (
+            {window.location.href.includes('edit') && 
               <DangerZone>
                 <H3>Danger zone</H3>
                 <P>Deleting a list is permanent, so make sure you're making the right decision!</P>
                 <Button onClick={deleteList}>Delete list</Button>
               </DangerZone>
-            ) : null}
+            }
           </StyledForm>
         </>
       )}

@@ -1,15 +1,21 @@
 import styled from 'styled-components'
 
 export const DangerZone = styled.div`
-  background-color: rgb(208, 48, 0);
-  padding: 3em;
+  background-color: #D03000;
+  padding: 48px;
   width: 90%;
-  color: white;
-  margin-top: 4rem;
+  color: #fff;
+  margin-top: 64px;
 
   @media (max-width: 720px) {
-    width: 100%;
-    margin-top: 3em;
-    padding: 2em;
+    width: calc(100% - 64px);
+    margin-top: 48px;
+    padding: 32px;
   }
+`
+
+export const Error = styled.div`
+  margin-bottom: 16px;
+  color: #D03000;
+  font-size: 16px;
 `

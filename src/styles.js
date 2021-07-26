@@ -30,14 +30,25 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const Wrapper = styled.div`
-  padding: 4rem 9rem 12rem 9rem;
+  padding: 64px 200px;
   background: radial-gradient(#e3e73b, #fff 65%);
   text-align: left;
   position: relative;
-  min-height: 100%;
+  min-height: calc(100vh - 186px);
 
-  @media (max-width: 720px) {
-    padding: 2em;
+  @media (max-width: 800px) {
+    padding: 48px;
+  }
+`
+
+export const H1 = styled.h1`
+  font-family: 'GT Flexa Trial', sans-serif;
+  font-weight: 900;
+  font-size: 80px;
+  line-height: 1;
+
+  @media (max-width: 800px) {
+    font-size: 54px;
   }
 `
 
@@ -45,7 +56,7 @@ export const H3 = styled.h3`
   font-size: 24px;
   font-weight: 400;
 
-  @media (max-width: 720px) {
+  @media (max-width: 800px) {
     font-size: 20px;
   }
 `
@@ -56,20 +67,21 @@ export const P = styled.p`
 
 export const Button = styled.button`
   font-family: 'Roboto Mono', monospace;
-  padding: 0.6em 1em;
-  margin: 1em 1em 1em 0em;
+  padding: 10px 16px;
+  margin-bottom: 16px;
   color: white;
   background-color: black;
   border: 1px solid black;
-  font-size: 1em;
+  font-size: 16px;
   font-weight: 700;
   text-decoration: none;
   width: fit-content;
   cursor: pointer;
+  opacity: ${props => props.disabled ? 0.4 : 1};
 
-  @media (max-width: 720px) {
-    width: 96%;
-    margin: 0.6em 0em;
+  @media (max-width: 800px) {
+    width: 100%;
+    margin: 10px 0;
   }
 `
 
@@ -77,10 +89,10 @@ export const InternalLink = styled(NavLink)`
   color: #000;
   text-decoration: underline;
   border: none;
-  margin-right: 32px;
+  margin: 0 32px 8px 0;
   font-weight: 600;
 
-  @media (max-width: 720px) {
+  @media (max-width: 800px) {
     font-size: 16px;
   }
 `
@@ -101,12 +113,13 @@ export const SecondaryInternalLink = styled(InternalLink)`
 `
 
 export const StyledForm = styled(Form)`
-  display: grid;
+  display: flex;
+  flex-direction: column;
   width: 75%;
   text-align: left;
 
   @media (max-width: 1000px) {
-    width: 75%;
+    width: 100%;
   }
 `
 
@@ -115,35 +128,42 @@ export const StyledField = styled(Field)`
   height: 3em;
   padding: 0em 1em;
   border: 3px solid black;
-  font-size: 1.2em;
+  font-size: 16px;
   width: 100%;
 
-  @media (max-width: 720px) {
+  @media (max-width: 800px) {
     width: 80%;
-    margin-top: 1em;
+    margin-top: 0;
   }
 `
 
 export const TextArea = styled(StyledField)`
-  height: 10em;
-  padding: 1em 1em;
+  height: 160px;
+  padding: 16px;
+  font-size: 16px;
 
-  @media (max-width: 720px) {
-    height: 8em;
+  @media (max-width: 800px) {
+    height: 128px;
+    width: calc(100% - 32px);
   }
 `
 
 export const Label = styled.label`
   font-size: 28px;
   margin: 10px 0;
-  @media only screen and (max-width: 1000px) {
+
+  @media (max-width: 1000px) {
     font-size: 20px;
     margin: 10px 0 0 0;
   }
 `
 
 export const InputContainer = styled.div`
-  margin: 2rem 0;
+  margin: 32px 0;
+
+  @media (max-width: 800px) {
+    margin: 24px 0;
+  }
 `
 
 export const LI = styled.li`
@@ -158,4 +178,9 @@ export const LI = styled.li`
 export const UL = styled.ul`
   margin-bottom: 3em;
   list-style: none;
+`
+
+export const LinkContainer = styled.div`
+  display: grid;
+  margin-top: 24px;
 `

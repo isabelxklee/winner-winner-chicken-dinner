@@ -4,7 +4,6 @@ export const FooterContainer = styled.div`
   background-color: #000;
   color: #fff;
   padding: 24px 0;
-  margin-top: 40px;
   position: relative;
   width: 100vw;
   align-items: center;
