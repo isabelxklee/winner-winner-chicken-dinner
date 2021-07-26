@@ -36,7 +36,7 @@ export const Wrapper = styled.div`
   position: relative;
   min-height: calc(100vh - 186px);
 
-  @media (max-width: 720px) {
+  @media (max-width: 800px) {
     padding: 48px;
   }
 `
@@ -45,7 +45,7 @@ export const H3 = styled.h3`
   font-size: 24px;
   font-weight: 400;
 
-  @media (max-width: 720px) {
+  @media (max-width: 800px) {
     font-size: 20px;
   }
 `
@@ -68,7 +68,7 @@ export const Button = styled.button`
   cursor: pointer;
   opacity: ${props => props.disabled ? 0.4 : 1};
 
-  @media (max-width: 720px) {
+  @media (max-width: 800px) {
     width: 96%;
     margin: 0.6em 0em;
   }
@@ -81,8 +81,9 @@ export const InternalLink = styled(NavLink)`
   margin-right: 32px;
   font-weight: 600;
 
-  @media (max-width: 720px) {
+  @media (max-width: 800px) {
     font-size: 16px;
+    margin-bottom: 8px;
   }
 `
 
@@ -119,9 +120,9 @@ export const StyledField = styled(Field)`
   font-size: 16px;
   width: 100%;
 
-  @media (max-width: 720px) {
+  @media (max-width: 800px) {
     width: 80%;
-    margin-top: 1em;
+    margin-top: 0;
   }
 `
 
@@ -130,7 +131,7 @@ export const TextArea = styled(StyledField)`
   padding: 1em 1em;
   font-size: 16px;
 
-  @media (max-width: 720px) {
+  @media (max-width: 800px) {
     height: 8em;
   }
 `
@@ -139,14 +140,18 @@ export const Label = styled.label`
   font-size: 28px;
   margin: 10px 0;
 
-  @media only screen and (max-width: 1000px) {
+  @media (max-width: 1000px) {
     font-size: 20px;
     margin: 10px 0 0 0;
   }
 `
 
 export const InputContainer = styled.div`
-  margin: 2rem 0;
+  margin: 32px 0;
+
+  @media (max-width: 800px) {
+    margin: 24px 0;
+  }
 `
 
 export const LI = styled.li`
@@ -161,4 +166,9 @@ export const LI = styled.li`
 export const UL = styled.ul`
   margin-bottom: 3em;
   list-style: none;
+`
+
+export const LinkContainer = styled.div`
+  display: grid;
+  margin-top: 24px;
 `

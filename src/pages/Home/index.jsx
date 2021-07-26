@@ -1,5 +1,5 @@
 import React from 'react'
-import {InternalLink, P} from '../../styles'
+import {InternalLink, P, LinkContainer} from '../../styles'
 
 const Home = () => (
   <>
@@ -9,10 +9,10 @@ const Home = () => (
     </h1>
     <P>Enter a list and spin the wheel to get a random winner each time. Ready to get started?</P>
 
-    <div className="section">
+    <LinkContainer>
       <InternalLink to="/create-list">Create a list</InternalLink>
       {localStorage.length > 0 && <InternalLink to="/list">See my existing list</InternalLink>}
-    </div>
+    </LinkContainer>
   </>
 )
 export default Home
