@@ -65,6 +65,7 @@ export const Button = styled.button`
   text-decoration: none;
   width: fit-content;
   cursor: pointer;
+  opacity: ${props => props.disabled ? 0.4 : 1};
 
   @media (max-width: 720px) {
     width: 96%;
