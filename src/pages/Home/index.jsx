@@ -11,11 +11,7 @@ const Home = () => (
 
     <div className="section">
       <InternalLink to="/create-list">Create a list</InternalLink>
-      {localStorage.length > 0 ? (
-        <InternalLink to="/list">See my existing list</InternalLink>
-      ) : (
-        <></>
-      )}
+      {localStorage.length > 0 && <InternalLink to="/list">See my existing list</InternalLink>}
     </div>
   </>
 )

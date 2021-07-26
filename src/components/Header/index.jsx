@@ -5,7 +5,7 @@ import {InternalLink} from '../../styles'
 const Header = () => (
   <Container>
     <InternalLink to="/">Home</InternalLink>
-    <InternalLink to="/list">Back to list</InternalLink>
+    {localStorage.length > 0 && <InternalLink to="/list">Back to list</InternalLink>}
   </Container>
 )
 
