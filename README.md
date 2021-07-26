@@ -1,4 +1,5 @@
 # Winner winner, chicken dinner! 🐓
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f23eab64-5b73-43d3-86be-30ab094f61ba/deploy-status)](https://app.netlify.com/sites/winner-winner/deploys)
 
 Enter a list and spin the wheel to get a random winner each time. 🔮
 
