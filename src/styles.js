@@ -34,7 +34,7 @@ export const Wrapper = styled.div`
   background: radial-gradient(#e3e73b, #fff 65%);
   text-align: left;
   position: relative;
-  height: calc(100vh - 186px);
+  min-height: calc(100vh - 186px);
 
   @media (max-width: 720px) {
     padding: 48px;
