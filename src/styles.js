@@ -56,12 +56,12 @@ export const P = styled.p`
 
 export const Button = styled.button`
   font-family: 'Roboto Mono', monospace;
-  padding: 0.6em 1em;
-  margin: 1em 1em 1em 0em;
+  padding: 10px 16px;
+  margin-bottom: 16px;
   color: white;
   background-color: black;
   border: 1px solid black;
-  font-size: 1em;
+  font-size: 16px;
   font-weight: 700;
   text-decoration: none;
   width: fit-content;
@@ -69,8 +69,8 @@ export const Button = styled.button`
   opacity: ${props => props.disabled ? 0.4 : 1};
 
   @media (max-width: 800px) {
-    width: 96%;
-    margin: 0.6em 0em;
+    width: 100%;
+    margin: 10px 0;
   }
 `
 
@@ -103,7 +103,8 @@ export const SecondaryInternalLink = styled(InternalLink)`
 `
 
 export const StyledForm = styled(Form)`
-  display: grid;
+  display: flex;
+  flex-direction: column;
   width: 75%;
   text-align: left;
 
@@ -127,12 +128,13 @@ export const StyledField = styled(Field)`
 `
 
 export const TextArea = styled(StyledField)`
-  height: 10em;
-  padding: 1em 1em;
+  height: 160px;
+  padding: 16px;
   font-size: 16px;
 
   @media (max-width: 800px) {
-    height: 8em;
+    height: 128px;
+    width: calc(100% - 32px);
   }
 `
 

@@ -24,6 +24,7 @@ export const ProgressContainer = styled.div`
     width: 100%;
     border: 2px solid #000;
     height: 32px;
+    margin-bottom: 32px;
   }
 
   progress[value]::-webkit-progress-bar {
