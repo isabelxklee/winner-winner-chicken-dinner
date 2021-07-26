@@ -1,12 +1,11 @@
 import React from 'react'
-import {InternalLink, P, LinkContainer} from '../../styles'
+import {InternalLink, P, LinkContainer, H1} from '../../styles'
 
 const Home = () => (
   <>
-    <h1>
-      Winner winner, <br />
-      chicken dinner!
-    </h1>
+    <H1>
+      Winner winner, chicken dinner!
+    </H1>
     <P>Enter a list and spin the wheel to get a random winner each time. Ready to get started?</P>
 
     <LinkContainer>

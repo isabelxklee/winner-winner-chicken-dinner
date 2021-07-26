@@ -41,6 +41,17 @@ export const Wrapper = styled.div`
   }
 `
 
+export const H1 = styled.h1`
+  font-family: 'GT Flexa Trial', sans-serif;
+  font-weight: 900;
+  font-size: 80px;
+  line-height: 1;
+
+  @media (max-width: 800px) {
+    font-size: 54px;
+  }
+`
+
 export const H3 = styled.h3`
   font-size: 24px;
   font-weight: 400;
@@ -78,12 +89,11 @@ export const InternalLink = styled(NavLink)`
   color: #000;
   text-decoration: underline;
   border: none;
-  margin-right: 32px;
+  margin: 0 32px 8px 0;
   font-weight: 600;
 
   @media (max-width: 800px) {
     font-size: 16px;
-    margin-bottom: 8px;
   }
 `
 
